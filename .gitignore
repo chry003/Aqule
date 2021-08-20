@@ -1,0 +1,5 @@
+.codelite/
+build/
+
+tags
+Makefile

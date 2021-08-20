@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Aqule" Database="" Version="10000">
+  <Project Name="Aqule-Core" Path="Aqule-Core/Aqule-Core.project" Active="No"/>
+  <Project Name="Aqule-Sandbox" Path="Aqule-Sandbox/Aqule-Sandbox.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="Aqule-Core" ConfigName="Debug"/>
+      <Project Name="Aqule-Sandbox" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="Aqule-Core" ConfigName="Release"/>
+      <Project Name="Aqule-Sandbox" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
