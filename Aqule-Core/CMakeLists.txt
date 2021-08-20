@@ -9,7 +9,7 @@ set(source_core "${PROJECT_SOURCE_DIR}/src/")
 
 set(
 	include_dirs ${source_core}
-	"${PROJECT_SOURCE_DIR}/src/vendor/GLFW/"
+	"${PROJECT_SOURCE_DIR}/src/vendor/"
 	)
 
 include_directories(${include_dirs})
