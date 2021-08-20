@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="Aqule-Core" Version="11000" InternalType="Console">
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="vendor">
+      <VirtualDirectory Name="GLFW">
+        <File Name="src/vendor/GLFW/include/glfw3native.h"/>
+        <File Name="src/vendor/GLFW/include/glfw3.h"/>
+        <VirtualDirectory Name="lib">
+          <File Name="src/vendor/GLFW/lib/libglfw.so"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
     <File Name="src/Aqule.hpp"/>
     <VirtualDirectory Name="Aqule">
+      <VirtualDirectory Name="Events">
+        <File Name="src/Aqule/Events/KeyEvent.hpp"/>
+        <File Name="src/Aqule/Events/Event.hpp"/>
+      </VirtualDirectory>
       <File Name="src/Aqule/EntryPoint.hpp"/>
       <File Name="src/Aqule/Core.hpp"/>
       <File Name="src/Aqule/Application.hpp"/>

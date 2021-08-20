@@ -5,7 +5,7 @@ class Sandbox : public Aq::Application
 public:
     Sandbox()
     {
-        
+
     }
     ~Sandbox()
     {

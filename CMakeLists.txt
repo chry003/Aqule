@@ -18,4 +18,4 @@ include_directories(${source_sandbox})
 file(GLOB_RECURSE source_sandbox_files "${source_sandbox}/*.cpp")
 
 add_executable(Aqule ${source_sandbox_files})
-target_link_libraries(Aqule "aq")
+target_link_libraries(Aqule PUBLIC "aq")
