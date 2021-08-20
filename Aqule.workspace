@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="Aqule" Database="" Version="10000">
-  <Project Name="Aqule-Core" Path="Aqule-Core/Aqule-Core.project" Active="No"/>
-  <Project Name="Aqule-Sandbox" Path="Aqule-Sandbox/Aqule-Sandbox.project" Active="Yes"/>
+  <Project Name="Aqule-Core" Path="Aqule-Core/Aqule-Core.project" Active="Yes"/>
+  <Project Name="Aqule-Sandbox" Path="Aqule-Sandbox/Aqule-Sandbox.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
