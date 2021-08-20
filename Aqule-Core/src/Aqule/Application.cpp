@@ -1,9 +1,7 @@
 #include "Application.hpp"
-#include <iostream>
 
-namespace Aq {
-    
-    
+namespace Aq{
+
     Application::Application()
     {
     }
@@ -12,9 +10,8 @@ namespace Aq {
     {
     }
     
-    void Application::aqMessage()
+    void Application::Run()
     {
-        std::cout << "Aqule Engine" << std::endl;
+        while(true);
     }
-    
 }
