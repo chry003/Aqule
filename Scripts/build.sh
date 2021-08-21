@@ -1,4 +1,4 @@
-rm ./build/Aquel
+rm ./build/Aqule
 
 cmake -B ./build -DCMAKE_BUILD_TYPE=Release
 

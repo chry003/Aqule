@@ -33,14 +33,13 @@ find_library(glfwlib libglfw.so PATHS "${deps}")
 # build glad
 file(GLOB lib_c ${Aqule_vendor_src}/glad/glad.c)
 set(source_glad ${lib_c})
-add_library(glad STATIC ${source_glad})
+add_library(glad SHARED ${source_glad})
 target_link_libraries(glad ${dllib})
 
 # build Aqule lib
 add_library(aq SHARED ${Aqule_src_files})
 target_link_libraries(aq "glad")
 target_link_libraries(aq ${glfwlib})
-
 
 #####################################################
 #					Aqule-Sandbox					#
@@ -51,5 +50,4 @@ include_directories(${sandbox_src})
 file(GLOB_RECURSE sandbox_src_files "${sandbox_src}/*.cpp")
 
 add_executable(Aqule ${sandbox_src_files})
-
 target_link_libraries(Aqule PUBLIC "aq")
