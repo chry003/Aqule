@@ -7,14 +7,10 @@ add_compile_definitions(AQ_PLATFORM_LINUX)
 
 set(source_core "${PROJECT_SOURCE_DIR}/src/")
 
-set(
-	include_dirs ${source_core}
-	"${PROJECT_SOURCE_DIR}/src/vendor/"
-	)
+include_directories(${source_core})
+include_directories("${PROJECT_SOURCE_DIR}/Vendor/")
 
-include_directories(${include_dirs})
-
-find_library(glfwlib libglfw.so PATHS "${PROJECT_SOURCE_DIR}/src/vendor/GLFW/lib")
+find_library(glfwlib libglfw.so PATHS "${PROJECT_SOURCE_DIR}/Dependencies")
 
 file(GLOB_RECURSE source_core_files "${source_core}/*.cpp")
 
