@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="Aqule-Sandbox" Version="11000" InternalType="Console">
   <VirtualDirectory Name="src">
-    <File Name="src/SandboxApp.cpp"/>
+    <File Name="src/App.cpp"/>
   </VirtualDirectory>
   <Description/>
   <Dependencies/>

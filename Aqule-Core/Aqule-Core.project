@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="Aqule-Core" Version="11000" InternalType="Console">
-  <VirtualDirectory Name="Aqule">
-    <File Name="Aqule/core.cpp"/>
-    <File Name="Aqule/Aqule.hpp"/>
-    <File Name="Aqule/Application.cpp"/>
-    <File Name="Aqule/Application.hpp"/>
+  <VirtualDirectory Name="src">
+    <File Name="src/Aqule.hpp"/>
+    <VirtualDirectory Name="Aqule">
+      <VirtualDirectory Name="Events">
+        <File Name="src/Aqule/Events/KeyEvent.hpp"/>
+        <File Name="src/Aqule/Events/Event.hpp"/>
+      </VirtualDirectory>
+      <File Name="src/Aqule/EntryPoint.hpp"/>
+      <File Name="src/Aqule/Core.hpp"/>
+      <File Name="src/Aqule/Application.hpp"/>
+      <File Name="src/Aqule/Application.cpp"/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <Description/>
   <Dependencies/>
@@ -12,6 +19,7 @@
     <GlobalSettings>
       <Compiler Options="" C_Options="" Assembler="">
         <IncludePath Value="."/>
+        <Preprocessor Value="AQ_PLATFORM_LINUX"/>
       </Compiler>
       <Linker Options="">
         <LibraryPath Value="."/>
