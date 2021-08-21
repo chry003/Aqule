@@ -1,5 +1,6 @@
 #pragma once
 
-#include "Aqule/Application.hpp"
 
-#include "Aqule/EntryPoint.hpp"
+#include "Aqule/Core/Application.hpp"
+
+#include "Aqule/Core/EntryPoint.hpp"
