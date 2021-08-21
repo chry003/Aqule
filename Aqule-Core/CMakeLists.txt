@@ -8,7 +8,7 @@ add_compile_definitions(AQ_PLATFORM_LINUX)
 set(source_core "${PROJECT_SOURCE_DIR}/src/")
 
 include_directories(${source_core})
-include_directories("${PROJECT_SOURCE_DIR}/Vendor/")
+# include_directories("${PROJECT_SOURCE_DIR}/Vendor/")
 
 find_library(glfwlib libglfw.so PATHS "${PROJECT_SOURCE_DIR}/Dependencies")
 
