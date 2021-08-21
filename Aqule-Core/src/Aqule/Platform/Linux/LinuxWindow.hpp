@@ -2,6 +2,7 @@
 
 #include "Aqule/Core/Window.hpp"
 
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 namespace Aq {
