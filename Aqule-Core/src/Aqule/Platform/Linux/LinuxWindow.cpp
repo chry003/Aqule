@@ -1,6 +1,9 @@
 #include "aqpcz.hpp"
 #include "LinuxWindow.hpp"
 
+#include "Aqule/Event/Event.hpp"
+#include "Aqule/Event/ApplicationEvent.hpp"
+
 namespace Aq {
 
 	static bool isGLFWWindowCreated = false;
@@ -25,6 +28,7 @@ namespace Aq {
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
+		m_Data.IsAlive = true;
 
 		std::cout << props.Title << ", " << props.Width << ", " << props.Height << ", " << std::endl;
 
@@ -39,6 +43,24 @@ namespace Aq {
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
+
+		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			data.IsAlive = false;
+			WindowCloseEvent event;
+			data.EventCallback(event);
+		});
+
+		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			data.Width = width;
+			data.Height = height;
+
+			WindowResizeEvent event(width, height);
+			data.EventCallback(event);
+		});
 	}
 
 	void LinuxWindow::Terminate()
@@ -48,6 +70,7 @@ namespace Aq {
 
 	void LinuxWindow::OnUpdate()
 	{
+		// glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glfwPollEvents();
 		glfwSwapBuffers(m_Window);
 	}
@@ -62,9 +85,14 @@ namespace Aq {
 		m_Data.VSync = enabled;
 	}
 
-	// bool LinuxWindow::IsVSync() const
-	// {
-	// 	return m_Data.VSync;
-	// }
+	bool LinuxWindow::IsVSync() const
+	{
+		return m_Data.VSync;
+	}
+
+	bool LinuxWindow::IsAlive() const
+	{
+		return m_Data.IsAlive;
+	}
 
 }

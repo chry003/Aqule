@@ -9,6 +9,8 @@ namespace Aq{
     public:
         Application();
         virtual ~Application();
+
+        void OnEvent(Event& e);
     
         void Run();
     private:

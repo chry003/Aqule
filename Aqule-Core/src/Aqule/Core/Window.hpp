@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Aqule/Core/Core.hpp"
 #include "aqpcz.hpp"
+#include "Aqule/Core/Core.hpp"
+#include "Aqule/Event/Event.hpp"
 
 namespace Aq {
 
@@ -22,7 +23,7 @@ namespace Aq {
 	class Window
 	{
 	public:
-		using EventCallbackFn = std::function<void(std::string&)>;
+		using EventCallbackFn = std::function<void(Event&)>;
 
 		virtual ~Window()
 		{
@@ -36,7 +37,8 @@ namespace Aq {
 
 		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
-		// virtual void IsVSync() const = 0;
+		virtual bool IsVSync() const = 0;
+		virtual bool IsAlive() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());
 	};

@@ -3,6 +3,7 @@
 #include "Aqule/Core/Window.hpp"
 
 #include <glad/glad.h>
+// include glad for now because github doesnt compile bc of gl include error bc glad includes it anyway-
 #include <GLFW/glfw3.h>
 
 namespace Aq {
@@ -20,12 +21,12 @@ namespace Aq {
 
 		inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.EventCallback = callback; };
 		void SetVSync(bool enabled) override;
-		// void IsVSync() const override;
+		bool IsVSync() const override;
+		bool IsAlive() const override;
 
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Terminate();
-		// virtual bool IsAlive() const;
 
 	private:
 		GLFWwindow* m_Window;
@@ -35,6 +36,7 @@ namespace Aq {
 			std::string Title;
 			uint32_t Width, Height;
 			bool VSync;
+			bool IsAlive;
 
 			EventCallbackFn EventCallback;
 		};
