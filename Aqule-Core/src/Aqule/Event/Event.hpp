@@ -3,13 +3,16 @@
 #include "aqpcz.hpp"
 #include "Aqule/Core/Core.hpp"
 
+// TODO: add event dispather
+
 namespace Aq {
 
 	enum EventType
 	{
 		None = 0,
-		WindowClose,
-		WindowResize
+		WindowClose, WindowResize,
+		MousePosition,
+		KeyboardKeys
 	};
 
 
@@ -24,7 +27,7 @@ namespace Aq {
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual std::string ToString() const { return GetName(); }
-		
+
 	};
 
 }

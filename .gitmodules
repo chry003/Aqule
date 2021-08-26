@@ -1,0 +1,3 @@
+[submodule "Aqule-Core/vendor/spdlog"]
+	path = Aqule-Core/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git

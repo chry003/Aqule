@@ -585,6 +585,12 @@
 	},
 	"file_history":
 	[
+		"/home/rahul/Development/Projects/Aqule/.gitignore",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Application.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule.sublime-project",
+		"/home/rahul/Development/Projects/Aqule/Scripts/build.sh",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Window.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Core.hpp",
 		"/home/rahul/Development/c++/Aqule/Aqule-Core/src/aqpcz.hpp",
 		"/home/rahul/Development/c++/Aqule/Aqule-Core/src/Aqule/Core/EntryPoint.hpp",
 		"/home/rahul/Development/c++/Aqule/Aqule-Core/src/Aqule/Graphics/Window.hpp",
@@ -706,13 +712,7 @@
 		"/home/rahul/Development/c++/sdl_platfrom/sdl_platformer.sublime-project",
 		"/home/rahul/Development/python-game/game/framework.py",
 		"/home/rahul/Development/python-game/game/engine_test/engine/game_loop.py",
-		"/home/rahul/Development/python-game/game/engine_test/engine/__init__.py",
-		"/home/rahul/Development/python-game/game/engine_test/engine/window.py",
-		"/home/rahul/Development/python-game/game/engine_test/engine/constants.py",
-		"/home/rahul/Development/python-game/game/engine_test/engine/inputs.py",
-		"/home/rahul/Development/python-game/game/engine_test/engine/main.py",
-		"/home/rahul/Development/python-game/game/pingpong.py",
-		"/home/rahul/Development/python-game/game/testFramework.py"
+		"/home/rahul/Development/python-game/game/engine_test/engine/__init__.py"
 	],
 	"find":
 	{
@@ -775,7 +775,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.456827033805,
 			1.0
 		],
 		"rows":

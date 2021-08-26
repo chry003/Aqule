@@ -61,6 +61,20 @@ namespace Aq {
 			WindowResizeEvent event(width, height);
 			data.EventCallback(event);
 		});
+
+		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xpos, double ypos)
+        {
+            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+            MousePositionEvent event(xpos, ypos);
+            data.EventCallback(event);
+        });
+
+        glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+        {
+            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+            KeyboardKeysEvent event(key, scancode, action, mods);
+            data.EventCallback(event);
+        });
 	}
 
 	void LinuxWindow::Terminate()
@@ -70,7 +84,6 @@ namespace Aq {
 
 	void LinuxWindow::OnUpdate()
 	{
-		// glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glfwPollEvents();
 		glfwSwapBuffers(m_Window);
 	}

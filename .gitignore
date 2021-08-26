@@ -1,7 +1,12 @@
+# Folders
 .codelite/
 build/
 
+# Files
 tags
 Makefile
 *.sublime-workspace
 *.sublime-projects
+Aqule.workspace
+Aqule.workspace.layout
+*.cbp
