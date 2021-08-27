@@ -1,0 +1,9 @@
+TITLE: Aqule-Todo
+
+NOTE: TODO Lists
+    TODO: Create Event Dispatcher
+    TODO: Handle Event and Dispatch
+    TODO: Create OnWindowCloseEvent to handle Window close event by Application
+
+NOTE: FIXME Lists
+    -HIGH FIXME: spdlog (github errors)

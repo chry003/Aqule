@@ -16,13 +16,7 @@ namespace Aq{
     {
     	// create window
         // m_Window = std::unique_ptr<Window>(Window::Create());
-        m_Window = std::unique_ptr<Window>(Window::Create(
-            WindowProps(
-                "Game Engine",
-                800,
-                600
-            )
-        ));
+        m_Window = std::unique_ptr<Window>(Window::Create());
 
         m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
     }

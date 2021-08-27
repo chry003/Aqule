@@ -4,7 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/Aqule-Core/vendor/spdlog/include"
+                "${workspaceFolder}/Aqule-Core/vendor/"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
