@@ -8,6 +8,8 @@ tags
 Makefile
 *.sublime-workspace
 *.sublime-projects
-Aqule.workspace
-Aqule.workspace.layout
+./Aqule.workspace
+./Aqule.workspace.layout
+./Aqule.sublime-project
+./Aqule.sublime-workspace
 *.cbp
