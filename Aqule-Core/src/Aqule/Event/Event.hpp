@@ -3,6 +3,7 @@
 #include "aqpcz.hpp"
 #include "Aqule/Core/Core.hpp"
 
+// TODO: add event type enum
 // TODO: add event dispather
 
 namespace Aq {
@@ -10,9 +11,15 @@ namespace Aq {
 	enum EventType
 	{
 		None = 0,
-		WindowClose, WindowResize,
-		MousePosition,
-		KeyboardKeys
+		
+		// Window Event
+		WindowClose, WindowSize, WindowPosition, WindowFocused, WindowRefresh,
+
+		// Mouse Event
+		MousePosition, MouseButtonPressed, MouseButtonReleased, MouseScroll,
+
+		// Keyboard Event
+		KeyPressed, KeyReleased
 	};
 
 

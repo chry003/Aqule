@@ -4,12 +4,16 @@
 		"selected_items":
 		[
 			[
-				"Aq",
-				"Aqule"
+				"Window",
+				"WindowPosEvent"
 			],
 			[
-				"Window",
-				"WindowData"
+				"push",
+				"push_back\tfunc"
+			],
+			[
+				"Aq",
+				"Aqule"
 			],
 			[
 				"function",
@@ -510,10 +514,6 @@
 			[
 				"def",
 				"DEFAULT_KEYS"
-			],
-			[
-				"set",
-				"setInputEvents"
 			]
 		]
 	},
@@ -533,8 +533,40 @@
 				"View: Toggle Menu"
 			],
 			[
+				"vew",
+				"View Package File"
+			],
+			[
 				"ins",
 				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"ECC",
+				"ECC: (Bazel) Generate compile_commands.json"
+			],
+			[
+				"gen",
+				"ECC: (Bazel) Generate compile_commands.json"
+			],
+			[
+				"vi",
+				"View: Toggle Menu"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
 			],
 			[
 				"remve",
@@ -543,14 +575,6 @@
 			[
 				"Package Control: remov",
 				"Package Control: Remove Package"
-			],
-			[
-				"vi",
-				"View: Toggle Menu"
-			],
-			[
-				"vew",
-				"View Package File"
 			],
 			[
 				"pack",
@@ -585,10 +609,16 @@
 	},
 	"file_history":
 	[
+		"/home/rahul/Development/Projects/Aqule/Scripts/build.sh",
+		"/home/rahul/Development/Projects/Aqule/Aqule.sublime-project",
+		"/home/rahul/.config/sublime-text-3/Packages/ClangAutoComplete/ClangAutoComplete.sublime-settings",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Application.cpp",
+		"/home/rahul/.config/sublime-text-3/Packages/User/ClangAutoComplete.sublime-settings",
+		"/home/rahul/Development/Projects/Aqule/.vscode/settings.json",
+		"/home/rahul/Development/Projects/Aqule/README.md",
+		"/home/rahul/Development/Projects/Aqule/CMakeLists.txt",
 		"/home/rahul/Development/Projects/Aqule/.gitignore",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Application.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule.sublime-project",
-		"/home/rahul/Development/Projects/Aqule/Scripts/build.sh",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Window.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Core.hpp",
 		"/home/rahul/Development/c++/Aqule/Aqule-Core/src/aqpcz.hpp",
@@ -706,17 +736,11 @@
 		"/home/rahul/Downloads/glew-2.2.0/README.md",
 		"/home/rahul/Downloads/glew-2.2.0/LICENSE.txt",
 		"/home/rahul/Development/c++/quat_glfw/include/shader.hpp",
-		"/home/rahul/Development/c++/quat_glfw/src/shader.cpp",
-		"/home/rahul/Development/c++/quat_glfw/glad.c",
-		"/home/rahul/Development/c++/quat_glfw/src/glad.c",
-		"/home/rahul/Development/c++/sdl_platfrom/sdl_platformer.sublime-project",
-		"/home/rahul/Development/python-game/game/framework.py",
-		"/home/rahul/Development/python-game/game/engine_test/engine/game_loop.py",
-		"/home/rahul/Development/python-game/game/engine_test/engine/__init__.py"
+		"/home/rahul/Development/c++/quat_glfw/src/shader.cpp"
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 42.0
 	},
 	"find_in_files":
 	{
@@ -730,6 +754,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"glfwSetWindowPosCallback",
+			"glfwSetWindowPos",
+			"GLFWwindowfocusfun",
+			"Windowfocus",
+			"Release",
+			"Debug",
 			"m_Data",
 			"Width",
 			"Vendor"
@@ -749,7 +779,7 @@
 	},
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -764,18 +794,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.456827033805,
 			1.0
 		],
 		"rows":
@@ -785,9 +808,17 @@
 		]
 	},
 	"menu_visible": false,
+	"output.CppYCM.2":
+	{
+		"height": 0.0
+	},
+	"output.clangautocomplete":
+	{
+		"height": 104.0
+	},
 	"output.exec":
 	{
-		"height": 249.0
+		"height": 174.0
 	},
 	"output.find_results":
 	{
@@ -796,7 +827,7 @@
 	"pinned_build_system": "Debug",
 	"replace":
 	{
-		"height": 44.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -805,6 +836,46 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				".sh",
+				"Scripts/build.sh"
+			],
+			[
+				"eve",
+				"Aqule-Core/src/Aqule/Event/Event.hpp"
+			],
+			[
+				"se",
+				".vscode/settings.json"
+			],
+			[
+				"linux",
+				"Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.cpp"
+			],
+			[
+				"appl",
+				"Aqule-Core/src/Aqule/Core/Application.cpp"
+			],
+			[
+				"re",
+				"README.md"
+			],
+			[
+				"bu",
+				"Scripts/build.sh"
+			],
+			[
+				"cma",
+				"CMakeLists.txt"
+			],
+			[
+				"linu",
+				"Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.cpp"
+			],
+			[
+				"applica",
+				"Aqule-Core/src/Aqule/Core/Application.cpp"
+			],
 			[
 				"index",
 				"Caze-Core/graphics/buffers/indexBuffer.cpp"
@@ -860,7 +931,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 250.0,
 	"status_bar_visible": true,
 	"template_settings":

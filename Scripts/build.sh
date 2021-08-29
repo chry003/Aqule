@@ -1,9 +1,13 @@
-rm ./build/Aqule
-
-cmake -B ./build -DCMAKE_BUILD_TYPE=Debug
-
-cmake --build ./build --config Release
+buildSystem="Debug"
 
 if [[ -f "./build/Aqule" ]]; then
-	xterm -bg black -fg white -T "Aqule Engine" -e /usr/bin/cb_console_runner ./build/Aqule
+	rm ./build/Aqule
+fi
+
+cmake -B ./build/${buildSystem} -DCMAKE_BUILD_TYPE=${buildSystem} -G "Ninja"
+
+ninja -C ./build/${buildSystem}
+
+if [[ -f "./build/${buildSystem}/Aqule" ]]; then
+	xfce4-terminal -T "Aqule" -e "/usr/bin/cb_console_runner ./build/${buildSystem}/Aqule" --show-borders --hide-menubar --hide-toolbar  --geometry=50x15+5+10&
 fi

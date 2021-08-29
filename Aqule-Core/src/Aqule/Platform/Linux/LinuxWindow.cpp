@@ -3,6 +3,8 @@
 
 #include "Aqule/Event/Event.hpp"
 #include "Aqule/Event/ApplicationEvent.hpp"
+#include "Aqule/Event/KeyboardEvent.hpp"
+#include "Aqule/Event/MouseEvent.hpp"
 
 namespace Aq {
 
@@ -44,6 +46,10 @@ namespace Aq {
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
+		//////////////////////////////////////////////
+		//				Window Event 				//
+		//////////////////////////////////////////////
+
 		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
 		{
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
@@ -58,22 +64,105 @@ namespace Aq {
 			data.Width = width;
 			data.Height = height;
 
-			WindowResizeEvent event(width, height);
+			WindowSizeEvent event(width, height);
 			data.EventCallback(event);
 		});
 
-		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xpos, double ypos)
-        {
-            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-            MousePositionEvent event(xpos, ypos);
-            data.EventCallback(event);
-        });
+		glfwSetWindowPosCallback(m_Window, [](GLFWwindow* window, int xpos, int ypos)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+			WindowPosEvent event(xpos, ypos);
+			data.EventCallback(event);
+		});
+
+		glfwSetWindowRefreshCallback(m_Window, [](GLFWwindow* window)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+			WindowRefreshEvent event;
+			data.EventCallback(event);
+
+		});
+
+		glfwSetWindowFocusCallback(m_Window, [](GLFWwindow* window, int focused)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+			WindowFocusedEvent event(focused);
+			data.EventCallback(event);
+		});
+
+		//////////////////////////////////////////////
+		//				Keyboard Event 				//
+		//////////////////////////////////////////////
 
         glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
         {
             WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-            KeyboardKeysEvent event(key, scancode, action, mods);
+
+            switch (action)
+            {
+            	case GLFW_PRESS:
+            	{
+            		KeyPressedEvent event(key, 0);
+            		data.EventCallback(event);
+            		break;
+            	}
+            	case GLFW_RELEASE:
+            	{
+            		KeyReleasedEvent event(key);
+            		data.EventCallback(event);
+            		break;
+            	}
+            	case GLFW_REPEAT:
+            	{
+            		KeyPressedEvent event(key, 1);
+            		data.EventCallback(event);
+            		break;
+            	}
+            }
+
+        });
+
+
+		//////////////////////////////////////////////
+		//				Mouse Event 				//
+		//////////////////////////////////////////////
+
+		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xpos, double ypos)
+        {
+            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+            MousePositionEvent event((float)xpos, (float)ypos);
             data.EventCallback(event);
+        });
+
+        glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)
+        {
+            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+            switch (action)
+          	{
+          		case GLFW_PRESS:
+          		{
+		            MouseButtonPressedEvent event(button);
+		            data.EventCallback(event);
+		            break;
+          		}
+          		case GLFW_RELEASE:
+          		{
+		            MouseButtonReleasedEvent event(button);
+		            data.EventCallback(event);
+		            break;
+          		}
+          	}
+        });
+
+        glfwSetScrollCallback(m_Window, [](GLFWwindow* window, double xoffset, double yoffset)
+        {
+        	WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+        	MouseScrollEvent event((float)xoffset, (float)yoffset);
+        	data.EventCallback(event);
         });
 	}
 

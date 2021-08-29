@@ -4,10 +4,35 @@
 
 namespace Aq {
 
-	class WindowResizeEvent : public Event
+	class WindowPosEvent : public Event
 	{
 	public:
-		WindowResizeEvent(unsigned int width, unsigned int height)
+		WindowPosEvent(int xpos, int ypos)
+			: m_Xpos(xpos), m_Ypos(ypos) {}
+
+		inline int GetXpos() const { return m_Xpos; }
+		inline int GetYpos() const { return m_Ypos; }
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+
+			ss << "WindowPosEvent: " << "x(" << m_Xpos << ")" << ", " << "y(" << m_Ypos << ")";
+
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(WindowPosition)
+
+	private:
+
+		int m_Xpos, m_Ypos;
+	};
+
+	class WindowSizeEvent : public Event
+	{
+	public:
+		WindowSizeEvent(unsigned int width, unsigned int height)
 			: m_Width(width), m_Height(height) {}
 
 		inline unsigned int GetWidth() const { return m_Width; }
@@ -16,38 +41,14 @@ namespace Aq {
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "WindowResizeEvent: " << m_Width << ", " << m_Height;
+			ss << "WindowSizeEvent: " << "width(" << m_Width << ")" << ", " << "height(" << m_Height << ")";
 			return ss.str();
 		}
 
-
-
-		EVENT_CLASS_TYPE(WindowResize)
+		EVENT_CLASS_TYPE(WindowSize)
 	private:
-		unsigned int m_Width, m_Height;
+		unsigned int m_Width, m_Height;		
 	};
-
-    class MousePositionEvent : public Event
-    {
-    public:
-        MousePositionEvent(double xpos, double ypos)
-        : m_xpos(xpos), m_ypos(ypos)
-        {
-
-        }
-
-        std::string ToString() const override
-        {
-            std::stringstream ss;
-            ss << "Mouse Position: " << m_xpos << ", " << m_ypos;
-            return ss.str();
-        }
-
-        EVENT_CLASS_TYPE(MousePosition)
-
-    private:
-        double m_xpos, m_ypos;
-    };
 
 	class WindowCloseEvent : public Event
 	{
@@ -58,25 +59,25 @@ namespace Aq {
 
 	};
 
-	class KeyboardKeysEvent : public Event
+	class WindowRefreshEvent : public Event
 	{
 	public:
-	    KeyboardKeysEvent(int key, int scancode, int action, int mods)
-            : m_Key(key), m_Scancode(scancode), m_Action(action), m_Mods(mods)
-	    {
+		WindowRefreshEvent(){}
 
-	    }
+		EVENT_CLASS_TYPE(WindowRefresh)
+	};
 
-        std::string ToString() const override
-        {
-            std::stringstream ss;
-            ss << "Key: " << m_Key << ", " << "Scancode: " << m_Scancode << ", " << "Action: " << m_Action << ", " << "Mods: " << m_Mods;
-            return ss.str();
-        }
+	class WindowFocusedEvent : public Event
+	{
+	public:
+		WindowFocusedEvent(int focused)
+			: m_Focused(focused)
+		{}
 
-        EVENT_CLASS_TYPE(KeyboardKeys)
-    private:
-        int m_Key, m_Scancode, m_Action, m_Mods;
+		EVENT_CLASS_TYPE(WindowFocused)
+
+	private:
+		int m_Focused;
 	};
 
 }
