@@ -18,6 +18,7 @@ namespace Aq {
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed)
+		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 	private:
 		int m_Key, m_Count;
 	};
@@ -36,6 +37,7 @@ namespace Aq {
 		}
 
 		EVENT_CLASS_TYPE(KeyReleased)
+		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 	private:
 		int m_Key;
 	};

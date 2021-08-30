@@ -1,8 +1,24 @@
-buildSystem="Debug"
+buildSystem=""
 
-if [[ -f "./build/Aqule" ]]; then
-	rm ./build/Aqule
+if [[ $1 == "Clean" ]]; then
+	rm ./build/* -rf
 fi
+
+if [[ $1 == "CleanBuild" ]]; then
+	rm ./build/* -rf
+fi
+
+if [[ $1 == "Debug" ]]; then
+	buildSystem="Debug"
+elif [[ $1 == "Release" ]]; then
+	buildSystem="Release"
+elif [[ $1 == "CleanBuild" ]]; then
+	buildSystem="Debug"
+else
+	exit
+fi
+
+rm ./build/${buildSystem}/Aqule
 
 cmake -B ./build/${buildSystem} -DCMAKE_BUILD_TYPE=${buildSystem} -G "Ninja"
 

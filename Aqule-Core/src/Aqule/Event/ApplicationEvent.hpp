@@ -23,6 +23,7 @@ namespace Aq {
 		}
 
 		EVENT_CLASS_TYPE(WindowPosition)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 
 	private:
 
@@ -46,6 +47,7 @@ namespace Aq {
 		}
 
 		EVENT_CLASS_TYPE(WindowSize)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	private:
 		unsigned int m_Width, m_Height;		
 	};
@@ -56,6 +58,7 @@ namespace Aq {
 		WindowCloseEvent() {}
 
 		EVENT_CLASS_TYPE(WindowClose)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 
 	};
 
@@ -65,6 +68,7 @@ namespace Aq {
 		WindowRefreshEvent(){}
 
 		EVENT_CLASS_TYPE(WindowRefresh)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
 	class WindowFocusedEvent : public Event
@@ -75,6 +79,7 @@ namespace Aq {
 		{}
 
 		EVENT_CLASS_TYPE(WindowFocused)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 
 	private:
 		int m_Focused;

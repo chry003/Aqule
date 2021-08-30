@@ -21,6 +21,7 @@ namespace Aq {
         }
 
         EVENT_CLASS_TYPE(MousePosition)
+        EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 
     private:
         float m_xpos, m_ypos;
@@ -41,6 +42,7 @@ namespace Aq {
         }
 
     	EVENT_CLASS_TYPE(MouseButtonPressed)
+        EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 
     private:
     	int m_Button;
@@ -61,6 +63,7 @@ namespace Aq {
         }
 
     	EVENT_CLASS_TYPE(MouseButtonReleased)
+        EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 
     private:
     	int m_Button;
@@ -82,6 +85,7 @@ namespace Aq {
         }
 
     	EVENT_CLASS_TYPE(MouseScroll)
+        EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 
     private:
     	float m_Xoffset, m_Yoffset;
