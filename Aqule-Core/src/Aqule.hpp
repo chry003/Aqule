@@ -1,5 +1,10 @@
 #pragma once
 
-#include "Aqule/Application.hpp"
 
-#include "Aqule/EntryPoint.hpp"
+// Include Use For Client Side
+#include "Aqule/Core/Application.hpp"
+#include "Aqule/Core/log.hpp"
+#include "Aqule/Core/Layer.hpp"
+
+// Entry Point
+#include "Aqule/Core/EntryPoint.hpp"

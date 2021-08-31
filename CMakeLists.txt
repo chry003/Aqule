@@ -1,21 +1,62 @@
 cmake_minimum_required(VERSION 3.20.0 FATAL_ERROR)
 
-project(Aqule)
+project(Aqule VERSION 0.1.0 LANGUAGES CXX C)
 
-# add_definitions(-DAQ_PLATFORM_LINUX)
-
+add_compile_definitions(GLFW_INCLUDE_NONE)
 add_compile_definitions(AQ_PLATFORM_LINUX)
+add_compile_definitions(AQ_DEBUG)
+add_compile_definitions(AQ_RELEASE)
+add_compile_definitions(SPDLOG_COMPILED_LIB)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++17")
-set(source_core "${PROJECT_SOURCE_DIR}/Aqule-Core/src")
+if(${CMAKE_BUILD_TYPE} EQUAL "Release")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++17")
+endif()
 
-add_subdirectory("${PROJECT_SOURCE_DIR}/Aqule-Core/")
-set(source_sandbox "${PROJECT_SOURCE_DIR}/Aqule-Sandbox/src")
+if(${CMAKE_BUILD_TYPE} EQUAL "Debug")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++17")
+endif()
 
-include_directories(${source_core})
-include_directories(${source_sandbox})
+set(deps "${PROJECT_SOURCE_DIR}/Dependencies")
 
-file(GLOB_RECURSE source_sandbox_files "${source_sandbox}/*.cpp")
+#####################################################
+#					Aqule-Core						#
+#####################################################
+set(Aqule_src "${PROJECT_SOURCE_DIR}/Aqule-Core/src")
+set(Aqule_vendor_src "${PROJECT_SOURCE_DIR}/Aqule-Core/vendor")
 
-add_executable(Aqule ${source_sandbox_files})
+include_directories(${Aqule_src})
+include_directories(${Aqule_vendor_src})
+include_directories(${Aqule_vendor_src}/spdlog/include)
+
+file(GLOB_RECURSE Aqule_src_files "${Aqule_src}/*.cpp")
+
+find_library(dllib dl-2.33 PATHS "${deps}")
+find_library(glfwlib libglfw.so PATHS "${deps}")
+
+# build spdlog
+file(GLOB lib_spdlog ${Aqule_vendor_src}/spdlog/src/*.cpp)
+set(source_spdlog ${lib_spdlog})
+add_library(spdlog SHARED ${source_spdlog})
+
+# build glad
+file(GLOB lib_c ${Aqule_vendor_src}/glad/glad.c)
+set(source_glad ${lib_c})
+add_library(glad SHARED ${source_glad})
+target_link_libraries(glad ${dllib})
+
+# build Aqule lib
+add_library(aq SHARED ${Aqule_src_files})
+target_link_libraries(aq glad)
+target_link_libraries(aq ${glfwlib})
+target_link_libraries(aq spdlog)
+
+#####################################################
+#					Aqule-Sandbox					#
+#####################################################
+
+set(sandbox_src "${PROJECT_SOURCE_DIR}/Aqule-Sandbox")
+include_directories(${sandbox_src})
+file(GLOB_RECURSE sandbox_src_files "${sandbox_src}/*.cpp")
+
+add_executable(Aqule ${sandbox_src_files})
 target_link_libraries(Aqule PUBLIC "aq")

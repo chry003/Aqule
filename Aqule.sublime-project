@@ -1,0 +1,32 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "Aqule Debug",
+			"working_dir": "${project_path}",
+			"cmd": ["./Scripts/build.sh Debug"],
+			"selector": "source.c++",
+			"shell": true
+		},
+		{
+			"name": "Aqule Release",
+			"working_dir": "${project_path}",
+			"cmd": ["./Scripts/build.sh Release"],
+			"selector": "source.c++",
+			"shell": true
+		},
+		{
+			"name": "Aqule Clean Build",
+			"working_dir": "${project_path}",
+			"cmd": ["./Scripts/build.sh CleanBuild"],
+			"selector": "source.c++",
+			"shell": true
+		}
+	]
+}
