@@ -31,6 +31,7 @@ namespace Aq {
 		}
 
 		virtual void OnUpdate() = 0;
+		virtual void OnClear() = 0;
 
 		virtual uint32_t GetWidth() const = 0;
 		virtual uint32_t GetHeight() const = 0;

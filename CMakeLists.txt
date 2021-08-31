@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.20.0 FATAL_ERROR)
 
 project(Aqule VERSION 0.1.0 LANGUAGES CXX C)
 
+add_compile_definitions(GLFW_INCLUDE_NONE)
 add_compile_definitions(AQ_PLATFORM_LINUX)
 add_compile_definitions(AQ_DEBUG)
 add_compile_definitions(AQ_RELEASE)
@@ -45,7 +46,7 @@ target_link_libraries(glad ${dllib})
 
 # build Aqule lib
 add_library(aq SHARED ${Aqule_src_files})
-target_link_libraries(aq "glad")
+target_link_libraries(aq glad)
 target_link_libraries(aq ${glfwlib})
 target_link_libraries(aq spdlog)
 

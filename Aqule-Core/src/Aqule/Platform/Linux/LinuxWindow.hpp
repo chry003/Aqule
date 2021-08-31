@@ -2,8 +2,6 @@
 
 #include "Aqule/Core/Window.hpp"
 
-#include <glad/glad.h>
-// include glad for now because github doesnt compile bc of gl include error bc glad includes it anyway-
 #include <GLFW/glfw3.h>
 
 namespace Aq {
@@ -15,6 +13,7 @@ namespace Aq {
 		virtual ~LinuxWindow();
 
 		void OnUpdate() override;
+		void OnClear() override;
 
 		inline uint32_t GetWidth() const override { return m_Data.Width; };
 		inline uint32_t GetHeight() const override { return m_Data.Height; };

@@ -4,16 +4,19 @@ class LayerTest : public Aq::Layer
 {
 public:
 	LayerTest()
-		: Layer("test"){}
+		: Layer("test")
+	{
+
+	}
 
 	void OnUpdate() override
 	{
-		AQ_INFO("Test Layer (update)");
+		// AQ_INFO("Test Layer (update)");
 	}
 
 	void OnEvent(Aq::Event& event) override
 	{
-		AQ_TRACE("{0}", event);
+		// AQ_TRACE("{0}", event);
 	}
 };
 

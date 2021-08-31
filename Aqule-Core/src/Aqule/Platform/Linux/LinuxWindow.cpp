@@ -6,6 +6,8 @@
 #include "Aqule/Event/KeyboardEvent.hpp"
 #include "Aqule/Event/MouseEvent.hpp"
 
+#include <glad/glad.h>
+
 namespace Aq {
 
 	static bool isGLFWWindowCreated = false;
@@ -37,12 +39,25 @@ namespace Aq {
 		if (!isGLFWWindowCreated)
 		{
 			int glfwIniti = glfwInit();
+			
+			ERR(glfwIniti, "GLFW FAILED!!")
 
 			isGLFWWindowCreated = true;
 		}
 
+		// Window Hints
+		glfwWindowHint(GLFW_SAMPLES, 4);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
+		ERR(status, "GLAD FAILED!!")
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
@@ -173,8 +188,14 @@ namespace Aq {
 
 	void LinuxWindow::OnUpdate()
 	{
+		// Update Window
 		glfwPollEvents();
 		glfwSwapBuffers(m_Window);
+	}
+
+	void LinuxWindow::OnClear()
+	{
+		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 	}
 
 	void LinuxWindow::SetVSync(bool enabled)
