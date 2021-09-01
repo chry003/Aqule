@@ -41,6 +41,7 @@ find_library(pthreadlib libpthread-2.33.so PATHS "${deps}")
 file(GLOB lib_spdlog ${Aqule_vendor_src}/spdlog/src/*.cpp)
 set(source_spdlog ${lib_spdlog})
 add_library(spdlog STATIC ${source_spdlog})
+target_link_libraries(spdlog ${pthreadlib})
 
 # build glad
 file(GLOB lib_c ${Aqule_vendor_src}/glad/glad.c)
