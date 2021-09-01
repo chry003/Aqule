@@ -32,20 +32,22 @@ file(GLOB_RECURSE Aqule_src_files "${Aqule_src}/*.cpp")
 
 find_library(dllib dl-2.33 PATHS "${deps}")
 find_library(glfwlib libglfw.so PATHS "${deps}")
+find_library(pthreadlib libpthread-2.33.so PATHS "${deps}")
 
 # build spdlog
 file(GLOB lib_spdlog ${Aqule_vendor_src}/spdlog/src/*.cpp)
 set(source_spdlog ${lib_spdlog})
-add_library(spdlog SHARED ${source_spdlog})
+add_library(spdlog STATIC ${source_spdlog})
 
 # build glad
 file(GLOB lib_c ${Aqule_vendor_src}/glad/glad.c)
 set(source_glad ${lib_c})
-add_library(glad SHARED ${source_glad})
+add_library(glad STATIC ${source_glad})
 target_link_libraries(glad ${dllib})
+target_link_libraries(glad ${pthreadlib})
 
 # build Aqule lib
-add_library(aq SHARED ${Aqule_src_files})
+add_library(aq STATIC ${Aqule_src_files})
 target_link_libraries(aq glad)
 target_link_libraries(aq ${glfwlib})
 target_link_libraries(aq spdlog)

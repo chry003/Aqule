@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Aqule/Core/Core.hpp"
 #include "Layer.hpp"
 
 #include <vector>

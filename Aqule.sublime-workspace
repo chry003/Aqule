@@ -621,6 +621,7 @@
 	},
 	"file_history":
 	[
+		"/home/rahul/Development/Projects/Aqule/.gitignore",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Window.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/GLFW/glfw3.h",
@@ -657,7 +658,6 @@
 		"/home/rahul/.config/sublime-text-3/Packages/User/ClangAutoComplete.sublime-settings",
 		"/home/rahul/Development/Projects/Aqule/.vscode/settings.json",
 		"/home/rahul/Development/Projects/Aqule/README.md",
-		"/home/rahul/Development/Projects/Aqule/.gitignore",
 		"/home/rahul/Development/c++/Aqule/Aqule-Core/src/aqpcz.hpp",
 		"/home/rahul/Development/c++/Aqule/Aqule-Core/src/Aqule/Core/EntryPoint.hpp",
 		"/home/rahul/Development/c++/Aqule/Aqule-Core/src/Aqule/Graphics/Window.hpp",
@@ -752,7 +752,7 @@
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -806,7 +806,7 @@
 	},
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -858,7 +858,7 @@
 	"pinned_build_system": "Aqule Debug",
 	"replace":
 	{
-		"height": 44.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":

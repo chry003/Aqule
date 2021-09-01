@@ -5,11 +5,18 @@
 #include <glad/glad.h>
 #include "Aqule/Platform/OpenGL/OpenGLShader/Shader.hpp"
 
+#include "Input.hpp"
+
 namespace Aq{
+
+    Application* Application::s_Instance = nullptr;
 
     Application::Application()
     {
     	// create window
+
+        s_Instance = this;
+
         m_Window = std::unique_ptr<Window>(Window::Create());
         m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
     }

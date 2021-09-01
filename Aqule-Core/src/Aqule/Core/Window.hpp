@@ -1,7 +1,6 @@
 #pragma once
 
 #include "aqpcz.hpp"
-#include "Aqule/Core/Core.hpp"
 #include "Aqule/Event/Event.hpp"
 
 namespace Aq {
@@ -40,6 +39,8 @@ namespace Aq {
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 		virtual bool IsAlive() const = 0;
+
+		virtual void* GetNativeWindow() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());
 	};

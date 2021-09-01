@@ -12,6 +12,11 @@ public:
 	void OnUpdate() override
 	{
 		// AQ_INFO("Test Layer (update)");
+
+        if (Aq::Input::IsKeyPressed(Aq::Key::A))
+        	if (Aq::Input::IsKeyPressed(Aq::Key::W))
+        		AQ_TRACE("Have Fun!!");
+
 	}
 
 	void OnEvent(Aq::Event& event) override
