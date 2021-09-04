@@ -10,5 +10,11 @@
 #include "Aqule/Core/KeyCodes.hpp"
 #include "Aqule/Core/MouseCodes.hpp"
 
+// Temp: Exposed Shader, glad, glfw and glm
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include "Aqule/Renderer/Shader.hpp"
+
 // Entry Point
 #include "Aqule/Core/EntryPoint.hpp"

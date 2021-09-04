@@ -41,6 +41,7 @@ namespace Aq {
 
 		std::string FragmentShaderCode = ReadFile(m_FragPath);
 		char const * FragmentSourcePointer = FragmentShaderCode.c_str();
+		
 		glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer , NULL);
 		glCompileShader(FragmentShaderID);
 

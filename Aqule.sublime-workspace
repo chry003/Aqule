@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"Fragme",
+				"FragmentSourcePointer"
+			],
+			[
+				"Triangl",
+				"TriangleLayer"
+			],
+			[
+				"Program",
+				"ProgramID"
+			],
+			[
+				"Shader",
+				"ShaderErr"
+			],
+			[
+				"Compile",
+				"CompileShader"
+			],
+			[
+				"in",
+				"inc\t#include <…>"
+			],
+			[
+				"Aq_",
+				"AQ_TRACE"
+			],
+			[
+				"re",
+				"return\tbuiltin"
+			],
+			[
+				"CMAke_bu",
+				"CMAKE_BUILD_TYPE\tbuiltin variable"
+			],
+			[
+				"ImGui",
+				"ImGuiLayer"
+			],
+			[
+				"ImGUi",
+				"ImGuiLayer"
+			],
+			[
+				"ImGU",
+				"ImGuiLayer"
+			],
+			[
+				"endf",
+				"endif\tbuiltin"
+			],
+			[
+				"Layer",
+				"LayerTest2"
+			],
+			[
+				"GetMouse",
+				"GetMousePosition"
+			],
+			[
+				"targelin",
+				"target_link_libraries\tbuiltin"
+			],
+			[
 				"addco",
 				"add_compile_definitions\tbuiltin"
 			],
@@ -14,10 +78,6 @@
 			[
 				"build",
 				"buildSystem"
-			],
-			[
-				"Layer",
-				"LayerTest"
 			],
 			[
 				"m_Layer",
@@ -106,10 +166,6 @@
 			[
 				"Com",
 				"Compiling"
-			],
-			[
-				"re",
-				"red"
 			],
 			[
 				"fil",
@@ -440,10 +496,6 @@
 				"jumpKey"
 			],
 			[
-				"in",
-				"inputEvent"
-			],
-			[
 				"ju",
 				"jump"
 			],
@@ -462,64 +514,40 @@
 			[
 				"enti",
 				"Entity"
-			],
-			[
-				"g",
-				"g"
-			],
-			[
-				"v",
-				"v"
-			],
-			[
-				"ve",
-				"velocity"
-			],
-			[
-				"is",
-				"isKeyPressed"
-			],
-			[
-				"cla",
-				"clamp"
-			],
-			[
-				"moe",
-				"movement"
-			],
-			[
-				"ent",
-				"Entity"
-			],
-			[
-				"de",
-				"delta"
-			],
-			[
-				"keypre",
-				"isKeyPressed"
-			],
-			[
-				"keys",
-				"keystrength"
-			],
-			[
-				"get",
-				"getActionStrength"
-			],
-			[
-				"inp",
-				"inputEvent"
-			],
-			[
-				"ket",
-				"keystrength"
 			]
 		]
 	},
-	"build_system": "",
+	"build_system": "Aqule Debug",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Aqule Clean Build",
+					""
+				],
+				[
+					"Aqule Debug",
+					""
+				],
+				[
+					"Aqule Release",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Aqule Debug",
+				""
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
@@ -529,16 +557,44 @@
 		"selected_items":
 		[
 			[
-				"view",
-				"View: Toggle Menu"
-			],
-			[
 				"vi",
 				"View: Toggle Menu"
 			],
 			[
 				"v",
 				"View: Toggle Menu"
+			],
+			[
+				"view",
+				"View: Toggle Menu"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"debugger",
+				"Debugger: Install Adapters"
+			],
+			[
+				"vie",
+				"View: Toggle Menu"
+			],
+			[
+				"gdb",
+				"Set Syntax: GDB"
+			],
+			[
+				"Build:",
+				"Build: New Build System"
+			],
+			[
+				"build With: Aqule",
+				"Build With: Aqule Debug"
 			],
 			[
 				"pac",
@@ -551,10 +607,6 @@
 			[
 				"vew",
 				"View Package File"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
 			],
 			[
 				"remo",
@@ -621,39 +673,68 @@
 	},
 	"file_history":
 	[
-		"/home/rahul/Development/Projects/Aqule/.gitignore",
+		"/home/rahul/Development/git/Hazel-cherno/older-versions/Hazel-30516ad7109b016213eb732f14e1c7061c1db603/Hazel/src/Hazel/Application.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Utils/FileUtils.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLShader/Shader.cpp",
+		"/home/rahul/Development/git/Hazel-cherno/Hazel/Hazel/src/Platform/OpenGL/OpenGLShader.cpp",
+		"/home/rahul/Development/Projects/Caze/Caze-Core/graphics/shader.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/CMakeLists.txt",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Renderer/Shader.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLShader/Shader.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Application.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Renderer/Shader/Shader.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Window.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Application.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Sandbox/src/SandboxApp.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/Linux/LinuxInput.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Input.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/ImGui/ImGuiLayer.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/ImGui/ImGuiLayer.hpp",
+		"/home/rahul/Development/Projects/Aqule/Example/src/ImGui_Test_Aqule/main.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/imgui/imgui.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/glm/detail/setup.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/log.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/LayerStack.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Layer.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Event/Event.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.cpp",
+		"/home/rahul/Development/Projects/Aqule/Example/src/ImGui_Test_Aqule/main2.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/spdlog/include/spdlog/fmt/bundled/chrono.h",
+		"/home/rahul/Development/Projects/Aqule/Aqule.sublime-project",
+		"/home/rahul/.config/sublime-text-3/Packages/SublimeGDB/SublimeGDB.sublime-settings",
+		"/home/rahul/Downloads/imgui-1.84.2/examples/example_glfw_opengl3/main.cpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Layer.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.hpp",
+		"/home/rahul/Development/Projects/Aqule/CMakeLists.txt",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/spdlog/CMakeLists.txt",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/spdlog/include/spdlog/sinks/win_eventlog_sink.h",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Sandbox/CMakeLists.txt",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/imgui/misc/README.txt",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/imgui/LICENSE.txt",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/MouseCodes.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/KeyCodes.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/EntryPoint.hpp",
+		"/home/rahul/Development/Projects/c++/asd",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/LayerStack.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Core.hpp",
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLShader/FragmentShader.aq_shader",
+		"/home/rahul/Development/Projects/Aqule/.gitignore",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/GLFW/glfw3.h",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/glad/glad.h",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/log.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Core.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Sandbox/src/SandboxApp.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Application.cpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLBuffers/vertexArray.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLBuffers/indexBuffer.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLBuffers/buffer.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.cpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLBuffers/vertexBuffer.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/ErrorHandle.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/ErrorHandle.cpp",
-		"/home/rahul/Development/Projects/Aqule/CMakeLists.txt",
 		"/home/rahul/Development/Projects/Aqule/Scripts/build.sh",
-		"/home/rahul/Development/Projects/Aqule/Aqule.sublime-project",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Event/Event.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/aqpcz.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/LayerStack.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/LayerStack.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Layer.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Layer.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Application.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/log.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Event/MouseEvent.hpp",
 		"/home/rahul/.config/sublime-text-3/Packages/C++ Classhelper/C++ Classhelper.sublime-settings",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Event/KeyboardEvent.hpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Event/ApplicationEvent.hpp",
-		"/home/rahul/Development/Projects/c++/asd",
 		"/home/rahul/.config/sublime-text-3/Packages/ClangAutoComplete/ClangAutoComplete.sublime-settings",
 		"/home/rahul/.config/sublime-text-3/Packages/User/ClangAutoComplete.sublime-settings",
 		"/home/rahul/Development/Projects/Aqule/.vscode/settings.json",
@@ -719,40 +800,11 @@
 		"/home/rahul/Development/c++/Caze/Caze/src/classes/maths/vec4.cpp",
 		"/home/rahul/Development/c++/Caze/Caze/src/classes/maths/vec3.cpp",
 		"/home/rahul/Development/c++/Caze/Caze/src/classes/maths/vec2.cpp",
-		"/home/rahul/Development/c++/Caze/Caze/include/header/maths/maths_utils.hpp",
-		"/home/rahul/Development/c++/Caze/Caze/include/header/maths/maths.hpp",
-		"/home/rahul/Development/c++/Caze/Caze/include/header/maths/mat4.hpp",
-		"/home/rahul/Development/c++/Caze/Caze/include/header/maths/vec4.hpp",
-		"/home/rahul/Development/c++/Caze/Caze/include/header/maths/vec3.hpp",
-		"/home/rahul/Development/c++/Caze/Caze/include/header/maths/vec2.hpp",
-		"/home/rahul/Development/c++/Quat/LICENSE",
-		"/home/rahul/Development/c++/Quat/build.sh",
-		"/home/rahul/Development/c++/quat_glfw/dump/main.cpp",
-		"/home/rahul/Development/c++/Quat/include/header/utils/fileutils.hpp",
-		"/home/rahul/Development/c++/Quat/include/header/quat.hpp",
-		"/home/rahul/Development/c++/Quat/src/classes/shaders/basic.vert",
-		"/home/rahul/Development/c++/Quat/bin/debug/a.txt",
-		"/home/rahul/Downloads/gdb-10.2/README",
-		"/home/rahul/Development/c++/Quat/src/classes/maths/vec4.cpp",
-		"/home/rahul/Development/c++/Quat/src/classes/maths/mat4.cpp",
-		"/home/rahul/Development/c++/Quat/include/header/maths/vec4.hpp",
-		"/home/rahul/Development/c++/Quat/include/header/maths/mat4.hpp",
-		"/home/rahul/Development/c++/Quat/quat.sublime-project",
-		"/home/rahul/Development/c++/Quat/target/exec/window.cpp",
-		"/home/rahul/Development/c++/Quat/file",
-		"/home/rahul/Development/c++/Quat/.gitattributes",
-		"/home/rahul/Development/c++/Quat/include/header/maths/maths.hpp",
-		"/home/rahul/Development/c++/Quat/src/main.cpp",
-		"/home/rahul/Development/c++/Quat/include/header/maths/maths_func.hpp",
-		"/home/rahul/Development/c++/Quat/include/header/maths/vec3.hpp",
-		"/home/rahul/Development/c++/Quat/include/headers/maths/maths.hpp",
-		"/home/rahul/Development/c++/Quat/include/classes/window.cpp",
-		"/home/rahul/Development/c++/Quat/include/headers/graphics/window.hpp",
-		"/home/rahul/Development/c++/Quat/README.md"
+		"/home/rahul/Development/c++/Caze/Caze/include/header/maths/maths_utils.hpp"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -766,6 +818,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Shader",
+			"shader",
+			"Shader",
+			"const",
+			"m_RendererID",
+			"VertexShaderErrorMessage",
+			"VertexShaderID",
+			"Aq",
+			"0",
+			"IS",
+			"aqpcz.hpp",
+			"#",
+			"aqpcz.hpp",
+			".\naqpcz.hpp",
+			".\n",
+			")\n",
+			"glm",
+			"show_demo_window",
+			"Aq",
+			"lib_spdlog",
+			"lib_c",
+			"SHARED",
+			"win32",
+			"ImGui",
+			"LayerTest",
+			"Hazel",
+			"}\n",
+			"SHARED",
 			"GLFW_MAXIMIZED",
 			"GLFW_MAXIMIZED_attrib",
 			"GLFW_MAXIMIZED_hint",
@@ -797,6 +877,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"aqpch.hpp"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -806,11 +887,11 @@
 	},
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 24.0
 	},
 	"input":
 	{
-		"height": 40.0
+		"height": 41.0
 	},
 	"layout":
 	{
@@ -839,6 +920,10 @@
 	{
 		"height": 0.0
 	},
+	"output.Debugger":
+	{
+		"height": 121.0
+	},
 	"output.clangautocomplete":
 	{
 		"height": 104.0
@@ -849,7 +934,7 @@
 	},
 	"output.find_results":
 	{
-		"height": 0.0
+		"height": 116.0
 	},
 	"output.unsaved_changes":
 	{
@@ -858,7 +943,7 @@
 	"pinned_build_system": "Aqule Debug",
 	"replace":
 	{
-		"height": 48.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -867,6 +952,54 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"shader",
+				"Aqule-Core/src/Aqule/Renderer/Shader.hpp"
+			],
+			[
+				"cma",
+				"Aqule-Core/CMakeLists.txt"
+			],
+			[
+				"app",
+				"Aqule-Core/src/Aqule/Core/Application.cpp"
+			],
+			[
+				"im",
+				"Aqule-Core/src/Aqule/ImGui/ImGuiLayer.hpp"
+			],
+			[
+				"sand",
+				"Aqule-Sandbox/src/SandboxApp.cpp"
+			],
+			[
+				"imgu",
+				"Aqule-Core/src/Aqule/ImGui/ImGuiLayer.hpp"
+			],
+			[
+				"main",
+				"Example/src/ImGui_Test_Aqule/main.cpp"
+			],
+			[
+				"wind",
+				"Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.cpp"
+			],
+			[
+				"linux",
+				"Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.hpp"
+			],
+			[
+				"view",
+				"Aqule-Core/vendor/spdlog/include/spdlog/sinks/win_eventlog_sink.h"
+			],
+			[
+				"appi",
+				"Aqule-Core/src/Aqule/Core/Application.hpp"
+			],
+			[
+				".txt",
+				"CMakeLists.txt"
+			],
 			[
 				"glfw",
 				"Aqule-Core/vendor/GLFW/glfw3.h"
@@ -886,10 +1019,6 @@
 			[
 				"event",
 				"Aqule-Core/src/Aqule/Event/Event.hpp"
-			],
-			[
-				"sand",
-				"Aqule-Sandbox/src/SandboxApp.cpp"
 			],
 			[
 				"aqu",
@@ -912,10 +1041,6 @@
 				"Aqule-Core/src/Aqule/Core/Core.hpp"
 			],
 			[
-				"linux",
-				"Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.cpp"
-			],
-			[
 				"se",
 				".vscode/settings.json"
 			],
@@ -926,10 +1051,6 @@
 			[
 				"bu",
 				"Scripts/build.sh"
-			],
-			[
-				"cma",
-				"CMakeLists.txt"
 			],
 			[
 				"linu",
@@ -954,10 +1075,6 @@
 			[
 				"batc",
 				"Caze-Core/graphics/batchrenderer2D.hpp"
-			],
-			[
-				"main",
-				"Caze-Sandbox/main.cpp"
 			],
 			[
 				"vertex",
@@ -991,7 +1108,7 @@
 	"settings":
 	{
 	},
-	"show_minimap": false,
+	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,

@@ -1,11 +1,10 @@
-#include "aqpcz.hpp"
+#include "aqpch.hpp"
 #include "Application.hpp"
 #include "log.hpp"
 
-#include <glad/glad.h>
-#include "Aqule/Platform/OpenGL/OpenGLShader/Shader.hpp"
-
 #include "Input.hpp"
+
+#include "Aqule/ImGui/ImGuiLayer.hpp"
 
 namespace Aq{
 
@@ -14,11 +13,12 @@ namespace Aq{
     Application::Application()
     {
     	// create window
-
         s_Instance = this;
 
         m_Window = std::unique_ptr<Window>(Window::Create());
         m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+        m_Window->SetVSync(false);
+        // PushOverlay(new ImGuiLayer);
     }
 
     Application::~Application()
@@ -28,11 +28,13 @@ namespace Aq{
     void Application::PushLayer(Layer* layer) 
     {
         m_LayerStack.PushLayer(layer);
+        layer->OnAttach();
     }
 
     void Application::PushOverlay(Layer* overlay) 
     {
         m_LayerStack.PushOverlay(overlay);
+        overlay->OnAttach();
     }
 
     void Application::OnEvent(Event& e)
@@ -53,54 +55,21 @@ namespace Aq{
 
     void Application::Run()
     {
-
-        glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
-
-        GLuint VertexArrayID;
-        glGenVertexArrays(1, &VertexArrayID);
-        glBindVertexArray(VertexArrayID);
-
-        static const GLfloat g_vertex_buffer_data[] = { 
-            -1.0f, -1.0f, 0.0f,
-             1.0f, -1.0f, 0.0f,
-             0.0f,  1.0f, 0.0f,
-        };
-
-        GLuint vertexbuffer;
-        glGenBuffers(1, &vertexbuffer);
-        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
-
-
-        // Create and compile our GLSL program from the shaders
-        Shader shader("./Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLShader/VertexShader.aq_shader", "./Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLShader/FragmentShader.aq_shader");
-
-        shader.enable();
-
-
         while(m_Running)
         {
+
             m_Window->OnClear();
 
-            glEnableVertexAttribArray(0);
-            glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-            glVertexAttribPointer(
-                0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-                3,                  // size
-                GL_FLOAT,           // type
-                GL_FALSE,           // normalized?
-                0,                  // stride
-                0            // array buffer offset
-            );
-            // 1rst attribute buffer : vertices
-            // Draw the triangle !
-            glDrawArrays(GL_TRIANGLES, 0, 3); // 3 indices starting at 0 -> 1 triangle
-            glDisableVertexAttribArray(0);
+            for (Layer* layer : m_LayerStack)
+            {
+                AQ_CORE_TRACE("{0}", layer->GetName());
+                layer->OnUpdate();
+            }
 
             m_Window->OnUpdate();
-            for (Layer* layer : m_LayerStack)
-                layer->OnUpdate();
         }
+
+        PushOverlay(new ImGuiLayer);
     }
 
     bool Application::OnWindowClose(WindowCloseEvent& e)

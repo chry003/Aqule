@@ -1,32 +1,50 @@
 {
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"./Scripts/build.sh Debug"
+			],
+			"name": "Aqule Debug",
+			"selector": "source.c++",
+			"shell": true,
+			"working_dir": "${project_path}"
+		},
+		{
+			"cmd":
+			[
+				"./Scripts/build.sh Release"
+			],
+			"name": "Aqule Release",
+			"selector": "source.c++",
+			"shell": true,
+			"working_dir": "${project_path}"
+		},
+		{
+			"cmd":
+			[
+				"./Scripts/build.sh CleanBuild"
+			],
+			"name": "Aqule Clean Build",
+			"selector": "source.c++",
+			"shell": true,
+			"working_dir": "${project_path}"
+		}
+	],
 	"folders":
 	[
 		{
 			"path": "."
 		}
 	],
-	"build_systems":
-	[
-		{
-			"name": "Aqule Debug",
-			"working_dir": "${project_path}",
-			"cmd": ["./Scripts/build.sh Debug"],
-			"selector": "source.c++",
-			"shell": true
-		},
-		{
-			"name": "Aqule Release",
-			"working_dir": "${project_path}",
-			"cmd": ["./Scripts/build.sh Release"],
-			"selector": "source.c++",
-			"shell": true
-		},
-		{
-			"name": "Aqule Clean Build",
-			"working_dir": "${project_path}",
-			"cmd": ["./Scripts/build.sh CleanBuild"],
-			"selector": "source.c++",
-			"shell": true
-		}
-	]
+	"settings":
+	{
+		"debug.configurations":
+		[
+		],
+		"sublimegdb_arguments": "",
+		"sublimegdb_commandline": "gdb --interpreter=mi --args ./build/Debug/Aqule",
+		"sublimegdb_workingdir": "./"
+	}
 }

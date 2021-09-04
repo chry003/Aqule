@@ -5,25 +5,33 @@ project(Aqule VERSION 0.1.0 LANGUAGES CXX C)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_compile_definitions(GLFW_INCLUDE_NONE)
-add_compile_definitions(AQ_PLATFORM_LINUX)
-add_compile_definitions(AQ_DEBUG)
-add_compile_definitions(AQ_RELEASE)
-add_compile_definitions(SPDLOG_COMPILED_LIB)
-
-if(${CMAKE_BUILD_TYPE} EQUAL "Release")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++17")
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+	add_compile_definitions(AQ_PLATFORM_LINUX)
 endif()
 
-if(${CMAKE_BUILD_TYPE} EQUAL "Debug")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++17")
+if(WIN32)
+	# WIN32 not supported
+	add_compile_definitions(AQ_PLATFORM_WINDOWS)
+endif()
+
+add_compile_definitions(GLFW_INCLUDE_NONE)
+add_compile_definitions(SPDLOG_COMPILED_LIB)
+
+if(${CMAKE_BUILD_TYPE} STREQUAL "Release")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++17")
+	add_compile_definitions(AQ_RELEASE)
+endif()
+
+if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64 -ggdb3 -Wall -std=c++17")
+	add_compile_definitions(AQ_DEBUG)
 endif()
 
 set(deps "${PROJECT_SOURCE_DIR}/Dependencies")
-
 #####################################################
 #					Aqule-Core						#
 #####################################################
+
 set(Aqule_src "${PROJECT_SOURCE_DIR}/Aqule-Core/src")
 set(Aqule_vendor_src "${PROJECT_SOURCE_DIR}/Aqule-Core/vendor")
 
@@ -31,28 +39,7 @@ include_directories(${Aqule_src})
 include_directories(${Aqule_vendor_src})
 include_directories(${Aqule_vendor_src}/spdlog/include)
 
-file(GLOB_RECURSE Aqule_src_files "${Aqule_src}/*.cpp")
-
-find_library(dllib dl-2.33 PATHS "${deps}")
-find_library(glfwlib libglfw.so PATHS "${deps}")
-find_library(pthreadlib libpthread-2.33.so PATHS "${deps}")
-
-# build spdlog
-file(GLOB lib_spdlog ${Aqule_vendor_src}/spdlog/src/*.cpp)
-set(source_spdlog ${lib_spdlog})
-add_library(spdlog SHARED ${source_spdlog})
-
-# build glad
-file(GLOB lib_c ${Aqule_vendor_src}/glad/glad.c)
-set(source_glad ${lib_c})
-add_library(glad SHARED ${source_glad})
-target_link_libraries(glad ${dllib})
-
-# build Aqule lib
-add_library(aq STATIC ${Aqule_src_files})
-target_link_libraries(aq glad)
-target_link_libraries(aq ${glfwlib})
-target_link_libraries(aq spdlog)
+add_subdirectory(Aqule-Core)
 
 #####################################################
 #					Aqule-Sandbox					#

@@ -1,6 +1,6 @@
 #include <GLFW/glfw3.h>
 
-#include "aqpcz.hpp"
+#include "aqpch.hpp"
 #include "Aqule/Core/Application.hpp"
 #include "Aqule/Core/Input.hpp"
 
@@ -20,25 +20,25 @@ namespace Aq {
 		return state == GLFW_PRESS;
 	}
 
-	std::pair<float, float> Input::GetMousePosition()
+	// FIXME: change this to glm vec2!
+	glm::vec2 Input::GetMousePosition()
 	{
 		auto* window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
 		double xpos, ypos;
 		glfwGetCursorPos(window, &xpos, &ypos);
-
-		return { (float)xpos, (float)ypos };
+		
+		glm::vec2 pos = {(float)xpos, (float)ypos};
+		return pos;
 	}
 
 	float Input::GetMouseX()
 	{
-		auto [x, y] = GetMousePosition();
-		return x;
+		return GetMousePosition().x;
 	}
 
 	float Input::GetMouseY()
 	{
-		auto [x, y] = GetMousePosition();
-		return y;
+		return GetMousePosition().y;
 	}
 
 }
