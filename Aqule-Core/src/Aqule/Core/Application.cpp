@@ -18,7 +18,6 @@ namespace Aq{
         m_Window = std::unique_ptr<Window>(Window::Create());
         m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
         m_Window->SetVSync(false);
-        // PushOverlay(new ImGuiLayer);
     }
 
     Application::~Application()
@@ -55,6 +54,9 @@ namespace Aq{
 
     void Application::Run()
     {
+
+        PushOverlay(new ImGuiLayer);
+
         while(m_Running)
         {
 
@@ -62,14 +64,11 @@ namespace Aq{
 
             for (Layer* layer : m_LayerStack)
             {
-                AQ_CORE_TRACE("{0}", layer->GetName());
                 layer->OnUpdate();
             }
 
             m_Window->OnUpdate();
         }
-
-        PushOverlay(new ImGuiLayer);
     }
 
     bool Application::OnWindowClose(WindowCloseEvent& e)

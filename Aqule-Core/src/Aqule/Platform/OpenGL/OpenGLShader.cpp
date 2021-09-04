@@ -73,50 +73,40 @@ namespace Aq {
 
 	void OpenGLShader::Load(const std::string& vertexSrc, const std::string& fragmentSrc) 
 	{
-		// std::string VertexShaderCode = ReadFile(vertexSrc.c_str());
-		// char const* VertexSourcePointer = VertexShaderCode.c_str();
+		std::string VertexShaderCode = ReadFile(vertexSrc.c_str());
+		char const* VertexSourcePointer = VertexShaderCode.c_str();
 
-		// std::string FragmentShaderCode = ReadFile(fragmentSrc.c_str());
-		// char const* FragmentSourcePointer = FragmentShaderCode.c_str();
+		std::string FragmentShaderCode = ReadFile(fragmentSrc.c_str());
+		char const* FragmentSourcePointer = FragmentShaderCode.c_str();
 
-		// CompileShader(VertexSourcePointer, FragmentSourcePointer);
+		CompileShader(VertexSourcePointer, FragmentSourcePointer);
+	}
+
+	void OpenGLShader::CompileShader(const char* VertexSourcePointer, const char* FragmentSourcePointer) 
+	{
 
 		GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 		GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
-		GLint Result = GL_FALSE;
-		int InfoLogLength;
-
-		std::string VertexShaderCode = ReadFile(vertexSrc.c_str());
-		char const * VertexSourcePointer = VertexShaderCode.c_str();
 
 		glShaderSource(VertexShaderID, 1, &VertexSourcePointer , NULL);
 		glCompileShader(VertexShaderID);
 
-		glGetShaderiv(VertexShaderID, GL_COMPILE_STATUS, &Result);
-		glGetShaderiv(VertexShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
-		if ( InfoLogLength > 0 )
-		{
-			std::vector<char> VertexShaderErrorMessage(InfoLogLength+1);
-			glGetShaderInfoLog(VertexShaderID, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
-			AQ_CORE_ERROR("Failed to create Vertex Shader: {0}", &VertexShaderErrorMessage[0]);
-		}
-
-		std::string FragmentShaderCode = ReadFile(fragmentSrc.c_str());
-		char const * FragmentSourcePointer = FragmentShaderCode.c_str();
+		ShaderErr("Failed to create Vertex Shader", VertexShaderID);
 		
 		glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer , NULL);
 		glCompileShader(FragmentShaderID);
 
-		// Check Fragment Shader
-		glGetShaderiv(FragmentShaderID, GL_COMPILE_STATUS, &Result);
-		glGetShaderiv(FragmentShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
-		if ( InfoLogLength > 0 )
-		{
-			std::vector<char> FragmentShaderErrorMessage(InfoLogLength+1);
-			glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
-			AQ_CORE_ERROR("Failed to create Fragment Shader: {0}", &FragmentShaderErrorMessage[0]);
-		}
+		ShaderErr("Failed to create Fragment Shader", FragmentShaderID);
+
+		CreateProgram(VertexShaderID, FragmentShaderID);
+
+	}
+
+	void OpenGLShader::CreateProgram(GLuint VertexShaderID, GLuint FragmentShaderID) 
+	{
+		GLint Result = GL_FALSE;
+		int InfoLogLength;
 
 		GLuint ProgramID = glCreateProgram();
 		glAttachShader(ProgramID, VertexShaderID);
@@ -133,44 +123,7 @@ namespace Aq {
 			AQ_CORE_ERROR("Failed to create Shader program: {0}", &ProgramErrorMessage[0]);
 		}
 
-		
-		glDetachShader(ProgramID, VertexShaderID);
-		glDetachShader(ProgramID, FragmentShaderID);
-		
-		glDeleteShader(VertexShaderID);
-		glDeleteShader(FragmentShaderID);
-
-		m_ShaderID = ProgramID;
-	}
-
-	void OpenGLShader::CompileShader(const char* VertexSourcePointer, const char* FragmentSourcePointer) 
-	{
-		GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
-		GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
-
-		glShaderSource(VertexShaderID, 1, &VertexSourcePointer , NULL);
-		glCompileShader(VertexShaderID);
-
-		ShaderErr("Vertex Shader Failed!", VertexShaderID);
-
-		glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer , NULL);
-		glCompileShader(FragmentShaderID);
-
-		ShaderErr("Fragment Shader Failed!", FragmentShaderID);
-
-		CreateProgram(VertexShaderID, FragmentShaderID);
-	}
-
-	void OpenGLShader::CreateProgram(GLuint VertexShaderID, GLuint FragmentShaderID) 
-	{
-		GLuint ProgramID = glCreateProgram();
-		glAttachShader(ProgramID, VertexShaderID);
-		glAttachShader(ProgramID, FragmentShaderID);
-		glLinkProgram(ProgramID);
-
-		ShaderErr("Failed To Create Program", ProgramID);
-
-		// DeleteShader(ProgramID, VertexShaderID, FragmentShaderID);
+		DeleteShader(ProgramID, VertexShaderID, FragmentShaderID);
 
 		m_ShaderID = ProgramID;
 	}
@@ -181,7 +134,7 @@ namespace Aq {
 		glDetachShader(ProgramID, FragmentShaderID);
 		
 		glDeleteShader(VertexShaderID);
-		glDeleteShader(FragmentShaderID);		
+		glDeleteShader(FragmentShaderID);
 	}
 
 	void OpenGLShader::ShaderErr(std::string desc, GLuint ShaderSourceID)
@@ -194,7 +147,7 @@ namespace Aq {
 			std::vector<char> ShaderErrorMessage(InfoLogLength+1);
 			glGetShaderInfoLog(ShaderSourceID, InfoLogLength, NULL, &ShaderErrorMessage[0]);
 			AQ_CORE_ERROR("{0}", desc);
-			ERR(false, &ShaderErrorMessage[0]);
+			ERR(0, &ShaderErrorMessage[0]);
 		}
 	}
 
