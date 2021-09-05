@@ -45,7 +45,7 @@ public:
 		glGenVertexArrays(1, &VertexArrayID);
 		glBindVertexArray(VertexArrayID);
 
-		std::unique_ptr<Aq::Shader> shader = std::unique_ptr<Aq::Shader>(Aq::Shader::Create("Shader", "./Aqule-Sandbox/assets/shader/vert.shader", "./Aqule-Sandbox/assets/shader/frag.shader"));
+		std::unique_ptr<Aq::Shader> shader = std::unique_ptr<Aq::Shader>(Aq::Shader::Create("Shader", "./assets/shader/vert.shader", "./assets/shader/frag.shader"));
 		shader->Bind();
 
 		static const GLfloat g_vertex_buffer_data[] = { 

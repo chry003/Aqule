@@ -25,28 +25,37 @@ find_library(dllib dl-2.33 PATHS "${deps}")
 find_library(glfwlib libglfw.so PATHS "${deps}")
 find_library(pthreadlib libpthread-2.33.so PATHS "${deps}")
 
+set(lib 
+	${dllib} 
+	${glfwlib}
+	${pthreadlib}
+	)
+
 # build spdlog
 file(GLOB lib_spdlog_source ${Aqule_vendor_src}/spdlog/src/*.cpp)
 set(source_spdlog ${lib_spdlog_source})
-add_library(spdlog STATIC ${source_spdlog})
-target_link_libraries(spdlog PRIVATE ${pthreadlib})
+add_library(spdlog SHARED ${source_spdlog})
+target_link_libraries(spdlog ${CMAKE_DL_LIBS})
+target_link_libraries(spdlog ${lib})
 
 # build glad
 file(GLOB lib_glad_source ${Aqule_vendor_src}/glad/glad.c)
 set(source_glad ${lib_glad_source})
-add_library(glad STATIC ${source_glad})
+add_library(glad SHARED ${source_glad})
+target_link_libraries(glad ${CMAKE_DL_LIBS})
+target_link_libraries(glad ${lib})
 
 # build imgui
 file(GLOB lib_imgui_source ${Aqule_vendor_src}/imgui/*.cpp)
 set(source_imgui ${lib_imgui_source})
-add_library(imgui STATIC ${source_imgui})
+add_library(imgui SHARED ${source_imgui})
+target_link_libraries(imgui ${CMAKE_DL_LIBS})
+target_link_libraries(imgui ${lib})
 
 # build Aqule lib
 add_library(aq STATIC ${Aqule_src_files})
-target_link_libraries(aq PRIVATE ${dllib})
-target_link_libraries(aq PRIVATE ${glfwlib})
-target_link_libraries(aq PRIVATE ${pthreadlib})
-target_link_libraries(aq PRIVATE spdlog)
-target_link_libraries(aq PRIVATE glad)
-target_link_libraries(aq PRIVATE imgui)
-target_link_libraries(aq PRIVATE ${CMAKE_DL_LIBS})
+target_link_libraries(aq ${CMAKE_DL_LIBS})
+target_link_libraries(aq ${lib})
+target_link_libraries(aq spdlog)
+target_link_libraries(aq glad)
+target_link_libraries(aq imgui)
