@@ -1,0 +1,9 @@
+[submodule "Aqule-Core/vendor/spdlog"]
+	path = Aqule-Core/vendor/spdlog
+	url = https://github.com/chry003/spdlog.git
+[submodule "Aqule-Core/vendor/imgui"]
+	path = Aqule-Core/vendor/imgui
+	url = https://github.com/chry003/imgui.git
+[submodule "Aqule-Core/vendor/glm"]
+	path = Aqule-Core/vendor/glm
+	url = https://github.com/chry003/glm.git

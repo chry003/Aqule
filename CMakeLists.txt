@@ -37,6 +37,10 @@ set(Aqule_vendor_src "${PROJECT_SOURCE_DIR}/Aqule-Core/vendor")
 
 include_directories(${Aqule_src})
 include_directories(${Aqule_vendor_src})
+include_directories(${Aqule_vendor_src}/glad)
+include_directories(${Aqule_vendor_src}/glm)
+include_directories(${Aqule_vendor_src}/imgui)
+include_directories(${Aqule_vendor_src}/imgui/)
 include_directories(${Aqule_vendor_src}/spdlog/include)
 
 add_subdirectory(Aqule-Core)
