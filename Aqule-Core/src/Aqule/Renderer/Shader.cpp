@@ -1,77 +1,69 @@
-#include "OpenGLShader.hpp"
+#include "Shader.hpp"
 #include "Aqule/Utils/FileUtils.hpp"
 #include "Aqule/Core/log.hpp"
 
 #include <glm/gtc/type_ptr.hpp>
 
-// Shader -> Load -> Compile -> Create Program -> Delete Shader Source ID -> Bind(client side)
-
-
 namespace Aq {
 
-	Shader* Shader::Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
-	{
-		return new OpenGLShader(name, vertexSrc, fragmentSrc);
-	}
-
-	OpenGLShader::OpenGLShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
+	Shader::Shader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
 		: m_Name(name)
 	{
 		Load(vertexSrc, fragmentSrc);
 	}
 
-	OpenGLShader::~OpenGLShader() 
+	Shader::~Shader() 
 	{
 		Unbind();
 		glDeleteProgram(m_ShaderID);
 	}
 
-	void OpenGLShader::Bind() const 
+	void Shader::Bind() const 
 	{
 		glUseProgram(m_ShaderID);
 	}
 
-	void OpenGLShader::Unbind() const 
+	void Shader::Unbind() const 
 	{
 		glUseProgram(0);
 	}
 
-	void OpenGLShader::SetInt(const std::string& name, int value) 
+	void Shader::SetInt(const std::string& name, int value) 
 	{
 		glUniform1i(getUniformLocation(name.c_str()), value);
 	}
 
-	void OpenGLShader::SetIntArray(const std::string& name, int* values, int count) 
+	void Shader::SetIntArray(const std::string& name, int* values, int count) 
 	{
 		glUniform1iv(getUniformLocation(name.c_str()), count, values);
 	}
 
-	void OpenGLShader::SetFloat(const std::string& name, float value) 
+	void Shader::SetFloat(const std::string& name, float value) 
 	{
 		glUniform1f(getUniformLocation(name.c_str()), value);
 	}
 
-	void OpenGLShader::SetFloat2(const std::string& name, const glm::vec2& value) 
+	void Shader::SetFloat2(const std::string& name, const glm::vec2& value) 
 	{
 		glUniform2f(getUniformLocation(name.c_str()), value.x, value.y);
 	}
 
-	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value) 
+	void Shader::SetFloat3(const std::string& name, const glm::vec3& value) 
 	{
 		glUniform3f(getUniformLocation(name.c_str()), value.x, value.y, value.z);
 	}
 
-	void OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value) 
+	void Shader::SetFloat4(const std::string& name, const glm::vec4& value) 
 	{
 		glUniform4f(getUniformLocation(name.c_str()), value.x, value.y, value.z, value.w);
 	}
 
-	void OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value) 
+	void Shader::SetMat4(const std::string& name, const glm::mat4& value) 
 	{
 		glUniformMatrix3fv(getUniformLocation(name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 	}
 
-	void OpenGLShader::Load(const std::string& vertexSrc, const std::string& fragmentSrc) 
+	void Shader::Load(const std::string& vertexSrc, const std::string& fragmentSrc) 
 	{
 		std::string VertexShaderCode = ReadFile(vertexSrc.c_str());
 		char const* VertexSourcePointer = VertexShaderCode.c_str();
@@ -82,7 +74,7 @@ namespace Aq {
 		CompileShader(VertexSourcePointer, FragmentSourcePointer);
 	}
 
-	void OpenGLShader::CompileShader(const char* VertexSourcePointer, const char* FragmentSourcePointer) 
+	void Shader::CompileShader(const char* VertexSourcePointer, const char* FragmentSourcePointer) 
 	{
 
 		GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
@@ -103,7 +95,7 @@ namespace Aq {
 
 	}
 
-	void OpenGLShader::CreateProgram(GLuint VertexShaderID, GLuint FragmentShaderID) 
+	void Shader::CreateProgram(GLuint VertexShaderID, GLuint FragmentShaderID) 
 	{
 		GLint Result = GL_FALSE;
 		int InfoLogLength;
@@ -128,7 +120,7 @@ namespace Aq {
 		m_ShaderID = ProgramID;
 	}
 
-	void OpenGLShader::DeleteShader(GLuint ProgramID, GLuint VertexShaderID, GLuint FragmentShaderID) 
+	void Shader::DeleteShader(GLuint ProgramID, GLuint VertexShaderID, GLuint FragmentShaderID) 
 	{
 		glDetachShader(ProgramID, VertexShaderID);
 		glDetachShader(ProgramID, FragmentShaderID);
@@ -137,7 +129,7 @@ namespace Aq {
 		glDeleteShader(FragmentShaderID);
 	}
 
-	void OpenGLShader::ShaderErr(std::string desc, GLuint ShaderSourceID)
+	void Shader::ShaderErr(std::string desc, GLuint ShaderSourceID)
 	{
 		int InfoLogLength;
 
@@ -151,7 +143,7 @@ namespace Aq {
 		}
 	}
 
-	GLint OpenGLShader::getUniformLocation(const GLchar* name) 
+	GLint Shader::getUniformLocation(const GLchar* name) 
 	{
 		return glGetUniformLocation(m_ShaderID, name);
 	}

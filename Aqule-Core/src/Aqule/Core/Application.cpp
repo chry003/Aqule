@@ -4,7 +4,7 @@
 
 #include "Input.hpp"
 
-#include "Aqule/ImGui/ImGuiLayer.hpp"
+#include "Aqule/Layer/ImGuiLayer.hpp"
 
 namespace Aq{
 
@@ -55,17 +55,23 @@ namespace Aq{
     void Application::Run()
     {
 
-        PushOverlay(new ImGuiLayer);
+        ImGuiLayer* imgui = new ImGuiLayer();
+        PushOverlay(imgui);
 
         while(m_Running)
         {
 
             m_Window->OnClear();
 
+            imgui->Begin();
+
             for (Layer* layer : m_LayerStack)
             {
+                layer->OnImGuiRender();
                 layer->OnUpdate();
             }
+
+            imgui->End();
 
             m_Window->OnUpdate();
         }

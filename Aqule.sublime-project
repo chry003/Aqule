@@ -30,6 +30,16 @@
 			"selector": "source.c++",
 			"shell": true,
 			"working_dir": "${project_path}"
+		},
+		{
+			"cmd":
+			[
+				"./Scripts/make_example.sh"
+			],
+			"name": "Aqule Example",
+			"selector": "source.c++",
+			"shell": true,
+			"working_dir": "${project_path}"
 		}
 	],
 	"folders":

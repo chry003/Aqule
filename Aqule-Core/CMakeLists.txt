@@ -11,6 +11,7 @@ add_compile_definitions(AQ_DEBUG)
 
 set(Aqule_src "${PROJECT_SOURCE_DIR}/src")
 set(Aqule_vendor_src "${PROJECT_SOURCE_DIR}/vendor")
+set(deps "${PROJECT_SOURCE_DIR}/Dependencies")
 
 include_directories(${Aqule_src})
 include_directories(${Aqule_vendor_src})

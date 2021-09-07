@@ -1,29 +1,6 @@
 #include "Aqule.hpp"
 
-class LayerTest : public Aq::Layer
-{
-public:
-	LayerTest()
-		: Layer("test")
-	{
-
-	}
-
-	void OnUpdate() override
-	{
-		// AQ_INFO("Test Layer (update)");
-
-        if (Aq::Input::IsKeyPressed(Aq::Key::A))
-        	if (Aq::Input::IsKeyPressed(Aq::Key::W))
-        		AQ_TRACE("Have Fun!!");
-
-	}
-
-	void OnEvent(Aq::Event& event) override
-	{
-		AQ_TRACE("x: {0}, y: {1}", Aq::Input::GetMousePosition().x, Aq::Input::GetMousePosition().y);
-	}
-};
+#include "imgui.h"
 
 class TriangleLayer : public Aq::Layer
 {
@@ -40,39 +17,58 @@ public:
 
 	void OnUpdate() override
 	{
-		// Draw the triangle !
-		GLuint VertexArrayID;
-		glGenVertexArrays(1, &VertexArrayID);
-		glBindVertexArray(VertexArrayID);
+		Aq::VertexArray* m_VertexArray = new Aq::VertexArray(); 
+		m_VertexArray->Bind();
 
-		std::unique_ptr<Aq::Shader> shader = std::unique_ptr<Aq::Shader>(Aq::Shader::Create("Shader", "./assets/shader/vert.shader", "./assets/shader/frag.shader"));
-		shader->Bind();
+		Aq::Shader* m_Shader = new Aq::Shader("Shader", "./assets/shader/shader.vert", "./assets/shader/shader.frag");
+		m_Shader->Bind();
+		m_Shader->SetFloat4("sh_color", m_Color);
 
-		static const GLfloat g_vertex_buffer_data[] = { 
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.0f,  0.5f, 0.0f,
+		Aq::VertexBuffer* m_VertexBuffer = new Aq::VertexBuffer(g_vertex_buffer_data, sizeof(g_vertex_buffer_data)); 
+		m_VertexBuffer->Bind();
+
+		Aq::BufferLayout layout = 
+		{
+			{ Aq::ShaderDataType::Float3, "position" }
 		};
 
-		GLuint vertexbuffer;
-		glGenBuffers(1, &vertexbuffer);
-		glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+		m_VertexBuffer->SetLayout(layout);
+		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
 
-		glEnableVertexAttribArray(0);
-		glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-		glVertexAttribPointer(
-			0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-			3,                  // size
-			GL_FLOAT,           // type
-			GL_FALSE,           // normalized?
-			0,                  // stride
-			(void*)0            // array buffer offset
-		);
-		glDrawArrays(GL_TRIANGLES, 0, 3); // 3 indices starting at 0 -> 1 triangle
+		Aq::IndexBuffer* m_IndexBuffer = new Aq::IndexBuffer(ind, sizeof(ind)); 
+		m_IndexBuffer->Bind();
+
+		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
+
+		glDrawElements(GL_TRIANGLES, sizeof(ind), GL_UNSIGNED_INT, nullptr);
 		glDisableVertexAttribArray(0);
-
 	}
+
+	void OnImGuiRender() override
+	{
+        {
+            ImGui::Begin("Hello, world!");
+
+            ImGui::ColorEdit3("clear color", (float*)&m_Color);
+
+            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+            ImGui::End();
+        }
+	}
+
+private:
+	glm::vec4 m_Color = glm::vec4(0.2f, 0.4f, 0.9f, 1);
+
+	GLfloat g_vertex_buffer_data[3 * 3] = {
+		-0.5f, -0.5f, 0.0f,
+		 0.5f, -0.5f, 0.0f,
+		 0.0f,  0.5f, 0.0f,
+	};
+
+	unsigned int ind[3] = 
+	{
+		0, 1, 2
+	};
 };
 
 class Sandbox : public Aq::Application
@@ -81,7 +77,6 @@ public:
     Sandbox()
     {
     	PushOverlay(new TriangleLayer());
-    	// PushLayer(new LayerTest());
     }
     ~Sandbox()
     {

@@ -27,7 +27,6 @@ if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
 	add_compile_definitions(AQ_DEBUG)
 endif()
 
-set(deps "${PROJECT_SOURCE_DIR}/Dependencies")
 #####################################################
 #					Aqule-Core						#
 #####################################################

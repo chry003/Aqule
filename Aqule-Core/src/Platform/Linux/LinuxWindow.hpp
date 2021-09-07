@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Aqule/Core/Window.hpp"
+#include "Aqule/Renderer/GraphicsContext.hpp"
 
 #include <GLFW/glfw3.h>
 
@@ -31,7 +32,8 @@ namespace Aq {
 
 	private:
 		GLFWwindow* m_Window;
-
+		GraphicsContext* m_Context;
+		
 		struct WindowData
 		{
 			std::string Title;
