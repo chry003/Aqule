@@ -12,11 +12,9 @@ namespace Aq {
 		LayerStack();
 		~LayerStack();
 
-		// Push Layer and Overlay
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* overlay);
 
-		// Pop Layer and Overlay
 		void PopLayer(Layer* layer);
 		void PopOverlay(Layer* overlay);
 

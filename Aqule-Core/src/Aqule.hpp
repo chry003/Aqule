@@ -18,6 +18,9 @@
 #include "Aqule/Renderer/Shader.hpp"
 #include "Aqule/Renderer/Buffer.hpp"
 #include "Aqule/Renderer/VertexArray.hpp"
+#include "Aqule/Renderer/Renderer.hpp"
+#include "Aqule/Renderer/Camera.hpp"
+#include "Aqule/Renderer/Material.hpp"
 
 // Entry Point
 #include "Aqule/Core/EntryPoint.hpp"

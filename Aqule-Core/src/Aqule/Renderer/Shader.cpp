@@ -60,7 +60,7 @@ namespace Aq {
 
 	void Shader::SetMat4(const std::string& name, const glm::mat4& value) 
 	{
-		glUniformMatrix3fv(getUniformLocation(name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
+		glUniformMatrix4fv(getUniformLocation(name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 	}
 
 	void Shader::Load(const std::string& vertexSrc, const std::string& fragmentSrc) 

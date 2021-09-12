@@ -4,8 +4,68 @@
 		"selected_items":
 		[
 			[
+				"m_color",
+				"m_Color2"
+			],
+			[
+				"sq",
+				"m_SqArr"
+			],
+			[
+				"m_sq",
+				"m_SqArr"
+			],
+			[
+				"vertex",
+				"vertexArray"
+			],
+			[
+				"render",
+				"RendererElements"
+			],
+			[
+				"orhtograpic",
+				"OrthographicCameraMatrix"
+			],
+			[
+				"B",
+				"Build"
+			],
+			[
+				"bu",
+				"buildSystem"
+			],
+			[
+				"Render",
+				"Renderer"
+			],
+			[
+				"vertexbuffer",
+				"vertexBuffer"
+			],
+			[
+				"m_vertex",
+				"m_VertexArray"
+			],
+			[
+				"Vertex",
+				"VertexArray"
+			],
+			[
 				"Shader",
+				"ShaderData"
+			],
+			[
+				"m_Render",
+				"m_RenderQueue"
+			],
+			[
+				"Sha",
 				"ShaderDataType"
+			],
+			[
+				"m_Sq",
+				"m_SqShd"
 			],
 			[
 				"Buffer",
@@ -14,14 +74,6 @@
 			[
 				"BufferE",
 				"BufferElement"
-			],
-			[
-				"Vertex",
-				"VertexBuffer"
-			],
-			[
-				"Render",
-				"RendererAPI"
 			],
 			[
 				"Glfw",
@@ -462,58 +514,6 @@
 			[
 				"W",
 				"WINDOW_WIDTH"
-			],
-			[
-				"coll",
-				"collisionShape2D"
-			],
-			[
-				"col",
-				"color"
-			],
-			[
-				"pri",
-				"printArg"
-			],
-			[
-				"pl",
-				"Player"
-			],
-			[
-				"arg",
-				"arg"
-			],
-			[
-				"phy",
-				"physicsObject"
-			],
-			[
-				"po",
-				"point"
-			],
-			[
-				"ph",
-				"physics"
-			],
-			[
-				"physi",
-				"physicsObject"
-			],
-			[
-				"obe",
-				"OBJECTS"
-			],
-			[
-				"shape",
-				"shape"
-			],
-			[
-				"co",
-				"color"
-			],
-			[
-				"li",
-				"list"
 			]
 		]
 	},
@@ -557,11 +557,11 @@
 		"selected_items":
 		[
 			[
-				"v",
+				"view",
 				"View: Toggle Menu"
 			],
 			[
-				"view",
+				"v",
 				"View: Toggle Menu"
 			],
 			[
@@ -664,6 +664,21 @@
 		"height": 130.0,
 		"history":
 		[
+			"os.pup",
+			"os.pops",
+			"os.pop",
+			"print(10 + 10)",
+			"print \"asd\"",
+			"help.os",
+			"os.help()",
+			"os",
+			"help(os)",
+			"import help",
+			"help(os)",
+			"os",
+			"import os",
+			"clear",
+			"pwd",
 			"quit()",
 			"exit()",
 			"exit",
@@ -687,37 +702,66 @@
 	},
 	"file_history":
 	[
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/VertexArray.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/VertexArray.cpp",
-		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/assets/shader/shader.vert",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Camera.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Sandbox/src/SandboxApp.cpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Renderer.cpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Renderer.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Camera.cpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule.sublime-project",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Shader.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Came",
+		"/home/rahul/Development/Projects/Aqule-Extend/Scripts/build.sh",
+		"/home/rahul/Development/Projects/Aqule-Extend/build/Debug/.ninja_deps",
+		"/home/rahul/Development/Projects/Aqule-Extend/Scripts/debug.sh",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer.cpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/assets/shader/shader.frag",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/glad/glad/glad.h",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Core/log.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/glm/glm/ext/matrix_transform.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/glm/glm/ext/matrix_clip_space.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Core/Application.cpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Layer/LayerStack.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Layer/ImGuiLayer.cpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/2DRenderer/RendererStruct.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Simple2DRenderer/Render2D.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Simple2DRenderer/Renderer2D.cpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Simple2DRenderer/Sprite.cpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Simple2DRenderer/Sprite.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Simple2DRenderer/Renderer2D.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Maths/Maths.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/glm/glm/detail/type_mat4x4.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/glm/glm/ext/matrix_float4x4.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/glm/glm/fwd.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/glm/manual.md",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Simple2DRenderer/Simple2DRenderer.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/StaticSprite.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Shader.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Core/Input.hpp",
+		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Layer/Layer.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Core/Core.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer/Buffers.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer/Buffers.hpp",
-		"/home/rahul/Development/Projects/Aqule-Extend/assets/shader/shader.vert",
-		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Layer/LayerStack.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Layer/LayerStack.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer/VertexBuffer.hpp",
-		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/glad/glad/glad.h",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/vendor/imgui/backends/imgui_impl_opengl3_loader.h",
-		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Sandbox/src/SandboxApp.cpp",
-		"/home/rahul/Development/Projects/Aqule-Extend/Aqule.sublime-project",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Sandbox/assets/shader/shader.frag",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer/IndexBuffer.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer/IndexBuffer.hpp",
-		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Shader.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Scripts/make_example.sh",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Sandbox/assets/shader/frag.shader",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer/IndexBuffer.hpp.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Core/Application.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Layer/ImGuiLayer.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Buffer/VertexBuffer.cpp",
-		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/Shader.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Platform/OpenGL/OpenGLShader.hpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/GraphicsContext.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Platform/Linux/LinuxWindow.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Renderer/GraphicsContext.hpp",
-		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/src/Aqule/Core/Application.cpp",
 		"/home/rahul/Development/Projects/Aqule-Extend/CMakeLists.txt",
 		"/home/rahul/Development/Projects/Aqule-Extend/Aqule-Core/CMakeLists.txt",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Sandbox/src/SandboxApp.cpp",
@@ -785,40 +829,11 @@
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/Linux/LinuxInput.cpp",
 		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Input.hpp",
 		"/home/rahul/Development/Projects/Aqule/Example/src/ImGui_Test_Aqule/main.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/imgui/imgui.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/glm/detail/setup.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/log.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Layer.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Event/Event.hpp",
-		"/home/rahul/Development/Projects/Aqule/Example/src/ImGui_Test_Aqule/main2.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/spdlog/include/spdlog/fmt/bundled/chrono.h",
-		"/home/rahul/Development/Projects/Aqule/Aqule.sublime-project",
-		"/home/rahul/.config/sublime-text-3/Packages/SublimeGDB/SublimeGDB.sublime-settings",
-		"/home/rahul/Downloads/imgui-1.84.2/examples/example_glfw_opengl3/main.cpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/spdlog/include/spdlog/sinks/win_eventlog_sink.h",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Sandbox/CMakeLists.txt",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/imgui/misc/README.txt",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/imgui/LICENSE.txt",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/MouseCodes.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/KeyCodes.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/Core.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLShader/FragmentShader.aq_shader",
-		"/home/rahul/Development/Projects/Aqule/.gitignore",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/GLFW/glfw3.h",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/glad/glad.h",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/log.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLBuffers/vertexArray.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLBuffers/indexBuffer.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLBuffers/buffer.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Platform/OpenGL/OpenGLBuffers/vertexBuffer.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/ErrorHandle.hpp",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/Aqule/Core/ErrorHandle.cpp",
-		"/home/rahul/Development/Projects/Aqule/Scripts/build.sh",
-		"/home/rahul/Development/Projects/Aqule/Aqule-Core/src/aqpcz.hpp"
+		"/home/rahul/Development/Projects/Aqule/Aqule-Core/vendor/imgui/imgui.cpp"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
@@ -832,6 +847,99 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Position",
+			"m_SqArr",
+			"width",
+			"height",
+			"Scene",
+			"RendererElements",
+			"const",
+			"Aq",
+			"vec4",
+			".",
+			"=",
+			"Aq",
+			"->",
+			"new",
+			"->",
+			"m_SqArr",
+			"Aq",
+			"RendererCommand",
+			"Aq",
+			"Renderer",
+			".",
+			"m_Shader",
+			".",
+			"element",
+			"Unbind",
+			"element",
+			".",
+			"->",
+			"Bind",
+			"rendererData",
+			"RendererData",
+			"Aq",
+			"Simple2",
+			"RendererData",
+			"pos",
+			"1",
+			"GL_STATIC_DRAW",
+			"100",
+			"height",
+			"width",
+			"Bind",
+			"int",
+			"indexData",
+			"vertexData",
+			"ind",
+			"vertex_data",
+			"indexData",
+			"vertexData",
+			"UNSIGNED",
+			"*",
+			"renderer",
+			"ind",
+			"vertex_data",
+			"Shader",
+			"Aq",
+			".",
+			"-",
+			"bufferlayout",
+			"ind2",
+			"->",
+			"new",
+			"/",
+			"result",
+			"elements",
+			"unbind",
+			"bind",
+			"StaticSprite",
+			"renderable",
+			"Simple2DRenderer",
+			"override",
+			"Renderer",
+			"GetSize",
+			"vertex_data1",
+			"ind2",
+			"vertex_data2",
+			"m_SqShd",
+			"m_SqInd",
+			"m_SqBuff",
+			"m_SqArr",
+			"m_SqBuff",
+			".",
+			"m",
+			"Aq",
+			"m_SqShd",
+			"sq",
+			"5",
+			"m_IndexBuffer",
+			"ind",
+			"vertex_data",
+			"m_VertexBuffer",
+			"m_Shader",
+			"m_VertexArray",
+			"g_vertex_buffer_data",
 			"const",
 			"std",
 			".",
@@ -866,100 +974,7 @@
 			"OpenGLVertexBuffer",
 			"VertexBuffer",
 			"OpenGLVertexBuffer",
-			"OpenGLShader",
-			"OpenGLGraphicsContext",
-			"virtual",
-			"override",
-			"OpenGLGraphicsContext",
-			"m_T",
-			"0",
-			"TriangleLayer",
-			"m_T",
-			"HZ_CORE_ASSERT",
-			"Aq",
-			"0",
-			"m_T",
-			"4",
-			"3",
-			"4",
-			"HZ_CORE_INFO",
-			"message",
-			"0",
-			"#",
-			"m_LayerInsert",
-			"Aq",
-			"vendor",
-			"STATIC",
-			"SHARED",
-			"STATIC",
-			"PRIVATE",
-			"STATIC",
-			"ImGuiConfigFlags",
-			"Docking",
-			"ImGuiConfigFlags",
-			"ImGuiConfigFlags_NavEnableKeyboard",
-			"ImGuiConfigFlags_DockingEnable",
-			"flag",
-			".\n",
-			"docking",
-			"demo",
-			"Dock",
-			"Docking",
-			"GLuint",
-			"m_m_FragmentShaderID",
-			"m_m_VertexShaderID",
-			"FragmentShaderID",
-			"VertexShaderID",
-			"GLuint",
-			"FragmentShaderID",
-			"VertexShaderID",
-			"GLuint",
-			"Shader",
-			"shader",
-			"Shader",
-			"const",
-			"m_RendererID",
-			"VertexShaderErrorMessage",
-			"VertexShaderID",
-			"Aq",
-			"0",
-			"IS",
-			"aqpcz.hpp",
-			"#",
-			"aqpcz.hpp",
-			".\naqpcz.hpp",
-			".\n",
-			")\n",
-			"glm",
-			"show_demo_window",
-			"Aq",
-			"lib_spdlog",
-			"lib_c",
-			"SHARED",
-			"win32",
-			"ImGui",
-			"LayerTest",
-			"Hazel",
-			"}\n",
-			"SHARED",
-			"GLFW_MAXIMIZED",
-			"GLFW_MAXIMIZED_attrib",
-			"GLFW_MAXIMIZED_hint",
-			"GLADloadproc",
-			"Handled",
-			"Aq",
-			"begin",
-			"double",
-			"MouseButtonReleased",
-			"MouseButtonPressedEvent",
-			"int",
-			"KeyPressedEvent",
-			");",
-			"window",
-			"GLFWwindowrefreshfun",
-			"glfwSetWindowPosCallback",
-			"glfwSetWindowPos",
-			"GLFWwindowfocusfun"
+			"OpenGLShader"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1020,7 +1035,7 @@
 	},
 	"output.exec":
 	{
-		"height": 174.0
+		"height": 172.0
 	},
 	"output.find_results":
 	{
@@ -1043,12 +1058,76 @@
 		"selected_items":
 		[
 			[
+				"ver",
+				"Aqule-Core/src/Aqule/Renderer/VertexArray.hpp"
+			],
+			[
+				"vertex",
+				"Aqule-Core/src/Aqule/Renderer/VertexArray.cpp"
+			],
+			[
+				".ver",
+				"assets/shader/shader.vert"
+			],
+			[
+				"cam",
+				"Aqule-Core/src/Aqule/Renderer/Camera.hpp"
+			],
+			[
+				"shader.cp",
+				"Aqule-Core/src/Aqule/Renderer/Shader.cpp"
+			],
+			[
+				"shade",
+				"Aqule-Core/src/Aqule/Renderer/Shader.cpp"
+			],
+			[
+				"bu",
+				"Scripts/build.sh"
+			],
+			[
+				"b",
+				"Scripts/build.sh"
+			],
+			[
+				"bud",
+				"build/Debug/.ninja_deps"
+			],
+			[
+				"render",
+				"Aqule-Core/src/Aqule/Renderer/Renderer.hpp"
+			],
+			[
+				"shad",
+				"assets/shader/shader.vert"
+			],
+			[
+				".fra",
+				"assets/shader/shader.frag"
+			],
+			[
+				".fr",
+				"assets/shader/shader.frag"
+			],
+			[
+				"matrix_tra",
+				"Aqule-Core/vendor/glm/glm/ext/matrix_transform.hpp"
+			],
+			[
 				".vert",
 				"assets/shader/shader.vert"
 			],
 			[
 				"layer",
-				"Aqule-Core/src/Aqule/Layer/LayerStack.hpp"
+				"Aqule-Core/src/Aqule/Layer/Layer.cpp"
+			],
+			[
+				".frag",
+				"assets/shader/shader.frag"
+			],
+			[
+				"sand",
+				"Aqule-Sandbox/src/SandboxApp.cpp"
 			],
 			[
 				"layersat",
@@ -1056,10 +1135,6 @@
 			],
 			[
 				"saand",
-				"Aqule-Sandbox/src/SandboxApp.cpp"
-			],
-			[
-				"sand",
 				"Aqule-Sandbox/src/SandboxApp.cpp"
 			],
 			[
@@ -1163,10 +1238,6 @@
 				"README.md"
 			],
 			[
-				"bu",
-				"Scripts/build.sh"
-			],
-			[
 				"linu",
 				"Aqule-Core/src/Aqule/Platform/Linux/LinuxWindow.cpp"
 			],
@@ -1189,14 +1260,6 @@
 			[
 				"batc",
 				"Caze-Core/graphics/batchrenderer2D.hpp"
-			],
-			[
-				"vertex",
-				"Caze-Core/src/graphics/buffers/vertexArray.cpp"
-			],
-			[
-				"render",
-				"include/Caze/graphics/renderable2d.hpp"
 			]
 		],
 		"width": 0.0
@@ -1225,8 +1288,8 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 304.0,
+	"side_bar_visible": true,
+	"side_bar_width": 254.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -6,69 +6,99 @@ class TriangleLayer : public Aq::Layer
 {
 public:
 	TriangleLayer()
-		: Layer("Triangle")
+		: Layer("Triangle"), m_Camera(-3.5f, 3.5f, -3.5f, 3.5f)
 	{
 
 	}
 
 	void OnAttach() override
 	{
+		Aq::RendererCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1.0f});
+
+		for (float y = 0; y < 4.0f; y += 0.5)
+		{
+			for (float x = 0; x < 8.0f; x += 0.5)
+			{
+				m_MaterialVec.push_back(std::make_shared<Aq::Material>(
+					glm::vec3(x, y, 0.0f),
+					glm::vec2(0.4f, 0.4f), 
+					glm::vec4(rand() % 1000 / 1000.0f, 0.0f, 1.0f, 1.0f)
+				));
+			}
+		}
 	}
 
 	void OnUpdate() override
 	{
-		Aq::VertexArray* m_VertexArray = new Aq::VertexArray(); 
-		m_VertexArray->Bind();
-
-		Aq::Shader* m_Shader = new Aq::Shader("Shader", "./assets/shader/shader.vert", "./assets/shader/shader.frag");
-		m_Shader->Bind();
-		m_Shader->SetFloat4("sh_color", m_Color);
-
-		Aq::VertexBuffer* m_VertexBuffer = new Aq::VertexBuffer(g_vertex_buffer_data, sizeof(g_vertex_buffer_data)); 
-		m_VertexBuffer->Bind();
-
-		Aq::BufferLayout layout = 
 		{
-			{ Aq::ShaderDataType::Float3, "position" }
-		};
+	        if (Aq::Input::IsKeyPressed(Aq::Key::A))
+	        {
+	        	pos.x += speed;
+	        }
+	        else if (Aq::Input::IsKeyPressed(Aq::Key::D))
+	        {
+	        	pos.x -= speed;
+	        }
+	        else if (Aq::Input::IsKeyPressed(Aq::Key::W))
+	        {
+	        	pos.y -= speed;
+	        }
+	        else if (Aq::Input::IsKeyPressed(Aq::Key::S))
+	        {
+	        	pos.y += speed;
+	        }
 
-		m_VertexBuffer->SetLayout(layout);
-		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
+	        if (Aq::Input::IsKeyPressed(Aq::Key::Q))
+	        {
+	        	cameraRatio.x -= cameraRatioSpeed;
+	        	cameraRatio.y += cameraRatioSpeed;
+	        	cameraRatio.z -= cameraRatioSpeed;
+	        	cameraRatio.w += cameraRatioSpeed;
+	        	m_Camera.SetRatio(cameraRatio);
+	        }
+	        else if (Aq::Input::IsKeyPressed(Aq::Key::E))
+	        {
+	        	cameraRatio.x += cameraRatioSpeed;
+	        	cameraRatio.y -= cameraRatioSpeed;
+	        	cameraRatio.z += cameraRatioSpeed;
+	        	cameraRatio.w -= cameraRatioSpeed;
+	        	m_Camera.SetRatio(cameraRatio);
+	        }
+		}
 
-		Aq::IndexBuffer* m_IndexBuffer = new Aq::IndexBuffer(ind, sizeof(ind)); 
-		m_IndexBuffer->Bind();
+		m_Camera.SetPosition(pos);
+		
+		Aq::Renderer::Begin(m_Camera);
 
-		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
+		for (auto item: m_MaterialVec)
+		{
+			Aq::Renderer::Submit(item);
+		}
 
-		glDrawElements(GL_TRIANGLES, sizeof(ind), GL_UNSIGNED_INT, nullptr);
-		glDisableVertexAttribArray(0);
+		Aq::Renderer::End();
+		
+		Aq::Renderer::Flush();
 	}
 
 	void OnImGuiRender() override
 	{
         {
             ImGui::Begin("Hello, world!");
-
-            ImGui::ColorEdit3("clear color", (float*)&m_Color);
-
+            ImGui::SliderFloat("float", &cameraRatioSpeed, 0.0f, 0.5f);
+            ImGui::SliderFloat("float2", &speed, 0.0f, 0.5f);
             ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
             ImGui::End();
         }
 	}
 
 private:
-	glm::vec4 m_Color = glm::vec4(0.2f, 0.4f, 0.9f, 1);
+	Aq::OrthographicCamera m_Camera;
+	glm::vec4 cameraRatio = glm::vec4(-3.5f, 3.5f, -3.5f, 3.5f);
+	glm::vec3 pos = glm::vec3(0.0f, 0.0f, 0.0f);
+	float speed = 0.03f;
+	float cameraRatioSpeed = 0.3f;
 
-	GLfloat g_vertex_buffer_data[3 * 3] = {
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.0f,  0.5f, 0.0f,
-	};
-
-	unsigned int ind[3] = 
-	{
-		0, 1, 2
-	};
+	std::vector<std::shared_ptr<Aq::Material>> m_MaterialVec;
 };
 
 class Sandbox : public Aq::Application

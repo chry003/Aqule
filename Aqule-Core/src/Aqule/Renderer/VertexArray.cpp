@@ -38,7 +38,7 @@ namespace Aq {
 		glBindVertexArray(0);
 	}
 
-	void VertexArray::AddVertexBuffer(VertexBuffer* vertexBuffer) 
+	void VertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer) 
 	{
 		ERR(vertexBuffer->GetLayout().GetElements().size(), "Vertex Buffer has no layout!");
 
@@ -64,7 +64,7 @@ namespace Aq {
 		m_VertexBuffers.push_back(vertexBuffer);
 	}
 
-	void VertexArray::SetIndexBuffer(IndexBuffer* indexBuffer) 
+	void VertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer) 
 	{
 		glBindVertexArray(m_VertexArrayID);
 		indexBuffer->Bind();

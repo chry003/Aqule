@@ -2,10 +2,10 @@
 
 layout (location = 0) in vec4 position;
 
-out vec4 pos;
+uniform mat4 u_ViewPorjectionMatrix;
+uniform mat4 u_ModalViewMatrix;
 
 void main()
 {
-	pos = position;
-	gl_Position = position;
+	gl_Position = u_ViewPorjectionMatrix * u_ModalViewMatrix * position;
 };
